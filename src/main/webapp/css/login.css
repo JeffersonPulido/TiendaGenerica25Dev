@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-image: url('../images/back.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    height: 100vh;
+    position: relative; }
+
+.contenedor-general{
+    background-color: rgba(0, 0, 0, 0.644);
+    height: 100vh;
+}
+
+.cont-formulario{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    padding: 2%;
+    width: 40%;
+    height: 60%;
+    background-color: blanchedalmond;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+label{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: #000000 0.1em 0.1em 0.2em;
+    -webkit-text-stroke: 1px #3b5000;
+}
+
+input{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    border-radius: 5px;
+    width: 50%;
+    height: 30px;
+}
+
+.titulo{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    text-shadow: #000000 0.1em 0.1em 0.2em;
+    -webkit-text-stroke: 1px rgb(153, 210, 0);
+}
+
+.subtitulo{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    text-shadow: #000000 0.1em 0.1em 0.2em;
+    -webkit-text-stroke: 1px rgb(153, 210, 0);
+}
+
+.botonC {
+    border-radius: 5px;
+    background-color: #9ab316;
+    color: black;
+    text-decoration: none;
+    transition: 0.5s;
+    text-align: center;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+}
+.botonC:hover {
+    background-color: #6f801f;
+    color: whitesmoke;
+    text-align: center;
+}
+
+a{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-decoration: none;
+    color: black
+}
+
+a:hover{
+    color: whitesmoke; 
+}
+
+.link{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-decoration: none;
+    color: black
+}
+
+.link:hover{
+    color: rgb(75, 75, 75); 
+}
+
+
+
+
+
+
+

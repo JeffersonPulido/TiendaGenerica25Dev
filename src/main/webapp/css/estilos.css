@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+.principal {
+    padding-left: 10%;
+    padding-right: 10%;
+    position: relative;
+  }
+
+.contenido{
+    padding: 2%;
+    width: 40%;
+    background-color: #cbe044cc;
+    border-radius: 20px;
+
+
+    float: left;
+}
+
+.contenido2{
+    padding: 2%;
+    width: 40%;
+    background-color: #cbe044cc;
+    border-radius: 20px;
+
+    float: right;
+}
+
+form{
+    text-align: center;
+}
+
+label{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: rgb(255, 255, 255) 0.1em 0.1em 0.2em;
+}
+
+input{
+    border-radius: 10px;
+    width: 80%;
+}
+
+.botonC {
+    border-radius: 5px;
+    background-color: #9ab316;
+    color: black;
+    text-decoration: none;
+    transition: 0.5s;
+    text-align: center;
+    align-items: center;
+    width: 100px;
+}
+.botonC:hover {
+    background-color: #6f801f;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.botonA {
+    border-radius: 5px;
+    background-color: #cccf26;
+    color: black;
+    text-decoration: none;
+    transition: 0.5s;
+    text-align: center;
+    align-items: center;
+    width: 100px;
+}
+.botonA:hover {
+    background-color: #80711f;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.botonB {
+    border-radius: 5px;
+    background-color: #cf2626;
+    color: black;
+    text-decoration: none;
+    transition: 0.5s;
+    text-align: center;
+    align-items: center;
+    width: 100px;
+}
+.botonB:hover {
+    background-color: #801f1f;
+    color: whitesmoke;
+    text-align: center;
+}
