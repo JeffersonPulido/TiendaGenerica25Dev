@@ -58,7 +58,7 @@
                 <li><a href="#why-us-section" class="nav-link">Proveedores</a></li>
                 <li><a href="#testimonials-section" class="nav-link">Productos</a></li>
                 <li><a href="#blog-section" class="nav-link">Ventas</a></li>
-                <li><a href="#contact-section" class="nav-link">Reportes</a></li>
+                <li><a href="views/reportes.jsp" class="nav-link">Reportes</a></li>
                 <li><a href="views/login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
               </ul>
             </nav>
@@ -109,8 +109,8 @@
                 </tbody>
             </table>
         </div>
-            <div class="footer-text">
-		<a href="#sec-2">©MinTIC2022 Developers</a>
-    </div>
+        <div class="footer-text">
+			<a href="#sec-2">©MinTIC2022 Developers</a>
+    	</div>
   </body>
 </html>

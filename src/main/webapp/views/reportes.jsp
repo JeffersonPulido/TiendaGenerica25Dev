@@ -1,8 +1,8 @@
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-    <head>
+	<head>
 	    <!-- Required meta tags -->
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,13 +10,13 @@
 	    <!-- Bootstrap CSS -->
 	    <link rel="stylesheet" href="../css/bootstrap.min.css">
 	    <!-- Style -->
-	    <link rel="stylesheet" href="../css/estilos.css">
+	    <link rel="stylesheet" href="../css/reportes.css">
 	    <link rel="stylesheet" href="../css/style.css">
 	    <link rel="shortcut icon" href="../images/icono.ico"> 
 	    <script src="https://kit.fontawesome.com/c159e6bc0d.js" crossorigin="anonymous"></script>
-        <title>Home || Tienda Supermarket S.A.S.</title>
-    </head>
-    <body>
+	       <title>Reportes || Tienda Supermarket S.A.S.</title>
+	</head>
+	<body>
         <!--NAV BAR-->
 	    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
 	      <div class="container">
@@ -44,18 +44,14 @@
         <br>
         <div class="container">
             <center>
-				<h1>Bienvenidos a Tiendas Supermarket S.A.S.</h1><hr> 
-				<img src="../images/Fruta.png" width=50%>    
+				<h1>Modulos Reportes</h1><hr> <br><br><br>
+			    <a href="reportes/listuser.jsp" class="botonU">Listado de Usuarios</a><br><br><br><br>
+			    <a href="reportes/listcliente.jsp" class="botonU">Listado de Clientes</a><br><br><br><br>
+			    <a href="reportes/ventasxcliente.jsp" class="botonU">Ventas por Cliente</a>
             </center>
         </div>
-        <%
-			if(request.getParameter("men")!=null){
-			String mensaje=request.getParameter("men");
-			out.print("<script>alert('"+mensaje+"');</script>");
-			}
-		%>
-    </body>
+	</body>
     <div class="footer-text">
-		<a href="#sec-2">Â©MinTIC2022 Developers</a>
+		<a href="#sec-2">©MinTIC2022 Developers</a>
     </div>
 </html>
