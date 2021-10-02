@@ -31,4 +31,7 @@
 			}
 		%>
 	</body>
+	<div class="footer-text">
+		<a href="#sec-2">©MinTIC2022 Developers</a>
+    </div>
 </html>

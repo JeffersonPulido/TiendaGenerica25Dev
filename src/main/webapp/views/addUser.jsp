@@ -59,7 +59,7 @@
                     <a href="Controlador?accion=listar">Regresar</a><br><br>
                 </form>
             </div>
-
         </div>
     </body>
+    
 </html>

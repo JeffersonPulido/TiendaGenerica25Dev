@@ -11,6 +11,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	    <!-- Style -->
 	    <link rel="shortcut icon" href="images/icono.ico"> 
+        <link rel="stylesheet" href="css/estilos.css">
         <title>Tienda Supermarket S.A.S.</title>
     </head>
     <body>
@@ -26,4 +27,7 @@
             
         </div>
     </body>
+    <div class="footer-text">
+		<a href="#sec-2">©MinTIC2022 Developers</a>
+    </div>
 </html>
