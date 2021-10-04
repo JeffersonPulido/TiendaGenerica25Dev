@@ -12,7 +12,6 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	    <link rel="stylesheet" href="css/owl.carousel.min.css">
 	    <!-- Bootstrap CSS -->
-	
 	    <!-- Style -->
 	    <link rel="stylesheet" href="../../css/estilos.css">
 	    <link rel="stylesheet" href="../../css/style.css">
@@ -49,7 +48,7 @@
 	      <div class="container">
 	        <div class="row align-items-center position-relative">
 	          <div class="site-logo">
-	            <a href="home.jsp" class="text-black"><span class="text-primary"></span><img src="../../images/LOGO.jpg" style="width: 20%;"></a>
+	            <a href="../home.jsp" class="text-black"><span class="text-primary"></span><img src="../../images/LOGO.jpg" style="width: 20%;"></a>
 	          </div>
 	          <div class="col-12">
 	            <nav class="site-navigation text-right ml-auto " role="navigation">

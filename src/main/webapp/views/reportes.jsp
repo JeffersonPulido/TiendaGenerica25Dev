@@ -45,9 +45,9 @@
         <div class="container">
             <center>
 				<h1>Modulos Reportes</h1><hr> <br><br><br>
-			    <a href="reportes/listuser.jsp" class="botonU">Listado de Usuarios</a><br><br><br><br>
-			    <a href="reportes/listcliente.jsp" class="botonU">Listado de Clientes</a><br><br><br><br>
-			    <a href="reportes/ventasxcliente.jsp" class="botonU">Ventas por Cliente</a>
+			    <a href="Reportes/listuser.jsp" class="botonU">Listado de Usuarios</a><br><br><br><br>
+			    <a href="Reportes/listcliente.jsp" class="botonU">Listado de Clientes</a><br><br><br><br>
+			    <a href="Reportes/ventasxcliente.jsp" class="botonU">Ventas por Cliente</a>
             </center>
         </div>
 	</body>

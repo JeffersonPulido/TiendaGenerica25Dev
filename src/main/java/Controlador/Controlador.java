@@ -17,9 +17,9 @@ import ModeloDAO.UsuarioDAO;
 public class Controlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    String listar="views/users.jsp";
-    String add="views/addUser.jsp";
-    String edit="views/updateUser.jsp";
+    String listar="views/Usuarios/users.jsp";
+    String add="views/Usuarios/addUser.jsp";
+    String edit="views/Usuarios/updateUser.jsp";
     Usuario p=new Usuario();
     UsuarioDAO dao=new UsuarioDAO();
     int cedula_usuario;
