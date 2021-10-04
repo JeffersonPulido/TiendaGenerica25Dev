@@ -20,7 +20,8 @@
                     <label>Contraseña:</label><br>
                     <input type="password" class="input-password" name="password" placeholder="Ingrese su contraseña..."><br><br>
                     <button type="submit" class="botonC" name="enviar">Ingresar</button><br><br>
-                    <a class="link">¿No tienes cuenta aun?, Registrate!</a>
+                    <a class="link">¿No tienes cuenta aun?, Registrate!</a><br>
+                    <a class="" href="../index.jsp">Volver</a><br>
                 </form>
             </div>
         </div>
