@@ -14,7 +14,7 @@
 	    <link rel="stylesheet" href="css/style.css">
 	    <link rel="shortcut icon" href="images/icono.ico"> 
 	    <script src="https://kit.fontawesome.com/c159e6bc0d.js" crossorigin="anonymous"></script>
-        <title>Añadir Usuario || Tienda Supermarket S.A.S.</title>
+        <title>Añadir Cliente || Tienda Supermarket S.A.S.</title>
     </head>
     <body>
         <!--NAV BAR-->
@@ -43,20 +43,20 @@
 	    </header>
         <div class="container">
             <div class="col-lg-6">
-                <h3>Agregar Usuario</h3>
-                <form action="Controlador">
+                <h3>Agregar Cliente</h3>
+                <form action="ControladorClientes">
                     Cedula Ciudadania:<br>
-                    <input class="form-control" type="text" name="txtcedula_usuario"><br>
+                    <input class="form-control" type="text" name="txtcedula_cliente"><br>
+                    Direccion: <br>
+                    <input class="form-control" type="text" name="txtdireccion_cliente"><br>
                     Correo Electronico: <br>
-                    <input class="form-control" type="text" name="txtemail_usuario"><br>
+                    <input class="form-control" type="text" name="txtemail_cliente"><br>
                     Nombre Completo: <br>
-                    <input class="form-control" type="text" name="txtnombre_usuario"><br>
-                    Password: <br>
-                    <input class="form-control" type="text" name="txtpassword"><br>
-                    Usuario: <br>
-                    <input class="form-control" type="text" name="txtusuario"><br>
+                    <input class="form-control" type="text" name="txtnombre_cliente"><br>
+                    Telefono: <br>
+                    <input class="form-control" type="text" name="txttelefono_cliente"><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Agregar"><hr>
-                    <a href="Controlador?accion=listar">Regresar</a><br><br>
+                    <a href="ControladorClientes?accion=listar">Regresar</a><br><br>
                 </form>
             </div>
         </div>

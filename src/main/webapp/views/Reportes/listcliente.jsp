@@ -1,7 +1,7 @@
 <%@page import="java.util.Iterator"%>
-<%@page import="Modelo.Usuario"%>
+<%@page import="Modelo.Clientes"%>
 <%@page import="java.util.List"%>
-<%@page import="ModeloDAO.UsuarioDAO"%>
+<%@page import="ModeloDAO.ClientesDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
   <head>
@@ -12,9 +12,9 @@
     <!-- Bootstrap CSS -->
 
     <!-- Style -->
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/icono.ico"> 
+	    <link rel="stylesheet" href="../../css/estilos.css">
+	    <link rel="stylesheet" href="../../css/style.css">
+	    <link rel="shortcut icon" href="../../images/icono.ico"> 
     <script src="https://kit.fontawesome.com/c159e6bc0d.js" crossorigin="anonymous"></script>
     
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap.min.js"></script>
     <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css"/>
-    <title>Usuarios || Supermarket SAS</title>
+    <title>Clientes || Supermarket SAS</title>
         
     <script>
         $(document).ready(function() {
@@ -48,18 +48,18 @@
       <div class="container">
         <div class="row align-items-center position-relative">
           <div class="site-logo">
-            <a href="views/home.jsp" class="text-black"><span class="text-primary"></span><img src="images/LOGO.jpg" style="width: 20%;"></a>
+	            <a href="../home.jsp" class="text-black"><span class="text-primary"></span><img src="../../images/LOGO.jpg" style="width: 20%;"></a>
           </div>
           <div class="col-12">
             <nav class="site-navigation text-right ml-auto " role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                <li><a href="Controlador?accion=listar" class="nav-link">Usuarios</a></li>
-                <li><a href="ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
+                <li><a href="../../Controlador?accion=listar" class="nav-link">Usuarios</a></li>
+                <li><a href="../../ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
                 <li><a href="#why-us-section" class="nav-link">Proveedores</a></li>
                 <li><a href="#testimonials-section" class="nav-link">Productos</a></li>
                 <li><a href="#blog-section" class="nav-link">Ventas</a></li>
-                <li><a href="views/reportes.jsp" class="nav-link">Reportes</a></li>
-                <li><a href="views/login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
+                <li><a href="../../views/reportes.jsp" class="nav-link">Reportes</a></li>
+                <li><a href="../../views/login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
               </ul>
             </nav>
           </div>
@@ -69,8 +69,7 @@
     </header>
     <!--CONTENT-->
             <div class="container">
-            <h1>Usuarios</h1>
-            <a class="btn btn-success" href="Controlador?accion=add"><i class="fas fa-user-plus"></i> Agregar Usuario Nuevo</a>
+            <h1>Lista de Clientes</h1>
             <hr>
             <br>
                             
@@ -78,32 +77,27 @@
                <thead>
                   <tr>
                       <th>CEDULA CIUDADANIA</th>
+                      <th>DIRECCION CLIENTE</th>
                       <th>CORREO ELECTRONICO</th>
-                      <th>NOMBRE USUARIO</th>
-                      <th>CONTRASEÑA</th>
-                      <th>USUARIO</th>
-                      <th>ACCIONES</th>
+                      <th>NOMBRE CLIENTE</th>
+                      <th>TELEFONO</th>
                   </tr>
                </thead>
                 <tbody>
                     <tr>
                     	<%
-		                    UsuarioDAO dao=new UsuarioDAO();
-		                    List<Usuario>list=dao.listar();
-		                    Iterator<Usuario>iter=list.iterator();
-		                    Usuario per=null;
+		                    ClientesDAO dao=new ClientesDAO();
+		                    List<Clientes>list=dao.listar();
+		                    Iterator<Clientes>iter=list.iterator();
+		                    Clientes per=null;
 		                    while(iter.hasNext()){
-	                       per=iter.next();
+	                       	per=iter.next();
                 		%>
-                        <td><%= per.getCedula_usuario()%></td>
-                        <td><%= per.getEmail_usuario()%></td>
-                        <td><%= per.getNombre_usuario()%></td>
-                        <td><%= per.getPassword()%></td>
-                        <td><%= per.getUsuario()%></td>
-                        <td>
-                            <a class="btn btn-warning" href="Controlador?accion=editar&cedula_usuario=<%= per.getCedula_usuario()%>"><i class="fas fa-user-edit"></i></a>
-                            <a class="btn btn-danger" href="Controlador?accion=eliminar&cedula_usuario=<%= per.getCedula_usuario()%>"><i class="fas fa-user-times"></i></a>
-                        </td>
+                        <td><%= per.getCedula_cliente()%></td>
+                        <td><%= per.getDireccion_cliente()%></td>
+                        <td><%= per.getEmail_cliente()%></td>
+                        <td><%= per.getNombre_cliente()%></td>
+                        <td><%= per.getTelefono_cliente()%></td>
                     </tr>
                     <%}%>
                 </tbody>

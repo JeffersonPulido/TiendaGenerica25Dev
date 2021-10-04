@@ -1,7 +1,7 @@
 <%@page import="java.util.Iterator"%>
-<%@page import="Modelo.Usuario"%>
+<%@page import="Modelo.Clientes"%>
 <%@page import="java.util.List"%>
-<%@page import="ModeloDAO.UsuarioDAO"%>
+<%@page import="ModeloDAO.ClientesDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
   <head>
@@ -27,7 +27,7 @@
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap.min.js"></script>
     <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css"/>
-    <title>Usuarios || Supermarket SAS</title>
+    <title>Clientes || Supermarket SAS</title>
         
     <script>
         $(document).ready(function() {
@@ -69,8 +69,8 @@
     </header>
     <!--CONTENT-->
             <div class="container">
-            <h1>Usuarios</h1>
-            <a class="btn btn-success" href="Controlador?accion=add"><i class="fas fa-user-plus"></i> Agregar Usuario Nuevo</a>
+            <h1>Clientes</h1>
+            <a class="btn btn-success" href="ControladorClientes?accion=add"><i class="fas fa-user-plus"></i> Agregar Cliente Nuevo</a>
             <hr>
             <br>
                             
@@ -78,31 +78,31 @@
                <thead>
                   <tr>
                       <th>CEDULA CIUDADANIA</th>
+                      <th>DIRECCION CLIENTE</th>
                       <th>CORREO ELECTRONICO</th>
-                      <th>NOMBRE USUARIO</th>
-                      <th>CONTRASEÑA</th>
-                      <th>USUARIO</th>
+                      <th>NOMBRE CLIENTE</th>
+                      <th>TELEFONO</th>
                       <th>ACCIONES</th>
                   </tr>
                </thead>
                 <tbody>
                     <tr>
                     	<%
-		                    UsuarioDAO dao=new UsuarioDAO();
-		                    List<Usuario>list=dao.listar();
-		                    Iterator<Usuario>iter=list.iterator();
-		                    Usuario per=null;
+		                    ClientesDAO dao=new ClientesDAO();
+		                    List<Clientes>list=dao.listar();
+		                    Iterator<Clientes>iter=list.iterator();
+		                    Clientes per=null;
 		                    while(iter.hasNext()){
-	                       per=iter.next();
+	                       	per=iter.next();
                 		%>
-                        <td><%= per.getCedula_usuario()%></td>
-                        <td><%= per.getEmail_usuario()%></td>
-                        <td><%= per.getNombre_usuario()%></td>
-                        <td><%= per.getPassword()%></td>
-                        <td><%= per.getUsuario()%></td>
+                        <td><%= per.getCedula_cliente()%></td>
+                        <td><%= per.getDireccion_cliente()%></td>
+                        <td><%= per.getEmail_cliente()%></td>
+                        <td><%= per.getNombre_cliente()%></td>
+                        <td><%= per.getTelefono_cliente()%></td>
                         <td>
-                            <a class="btn btn-warning" href="Controlador?accion=editar&cedula_usuario=<%= per.getCedula_usuario()%>"><i class="fas fa-user-edit"></i></a>
-                            <a class="btn btn-danger" href="Controlador?accion=eliminar&cedula_usuario=<%= per.getCedula_usuario()%>"><i class="fas fa-user-times"></i></a>
+                            <a class="btn btn-warning" href="ControladorClientes?accion=editar&cedula_cliente=<%= per.getCedula_cliente()%>"><i class="fas fa-user-edit"></i></a>
+                            <a class="btn btn-danger" href="ControladorClientes?accion=eliminar&cedula_cliente=<%= per.getCedula_cliente()%>"><i class="fas fa-user-times"></i></a>
                         </td>
                     </tr>
                     <%}%>
