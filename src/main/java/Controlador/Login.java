@@ -20,10 +20,12 @@ public class Login extends HttpServlet {
 			String usuario, password;
 			usuario = request.getParameter("user");
 			password = request.getParameter("password");
-			if (usuario.equals("Admin") && password.equals("123456")) {
+			//admininicial
+			//admin123456
+			if (usuario.equals("admininicial") && password.equals("admin123456")) {
 				response.sendRedirect("views/home.jsp?men=Bienvenido Administrador");
 			}else {
-				response.sendRedirect("views/login.jsp?men=Datos Incorrectos");
+				response.sendRedirect("views/login.jsp?men=Usuario o contraseña errados, intente de nuevo");
 			}
 		}
 	}

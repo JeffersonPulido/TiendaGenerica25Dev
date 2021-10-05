@@ -31,10 +31,10 @@
 	                <li><a href="Controlador?accion=listar" class="nav-link">Usuarios</a></li>
 	                <li><a href="ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
 	                <li><a href="#why-us-section" class="nav-link">Proveedores</a></li>
-	                <li><a href="#testimonials-section" class="nav-link">Productos</a></li>
+	                <li><a href="views/Productos/upProductos.jsp" class="nav-link">Productos</a></li>
 	                <li><a href="#blog-section" class="nav-link">Ventas</a></li>
-	                <li><a href="#contact-section" class="nav-link">Reportes</a></li>
-	                <li><a href="login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
+	                <li><a href="views/reportes.jsp" class="nav-link">Reportes</a></li>
+	                <li><a href="views/login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
 	              </ul>
 	            </nav>
 	          </div>
