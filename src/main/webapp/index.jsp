@@ -18,7 +18,6 @@
         <br>
         <br>
         <div class="container">
-            <!-- <a class="btn btn-success btn-lg" href="Controlador?accion=listar">Listar Persona</a> -->
             <center>
 				<h1>Bienvenidos a Tiendas Supermarket S.A.S.</h1><hr>
 				<h3><a href="views/login.jsp">Inicia sesion</a> para acceder a los modulos de gestion de la tienda.</h3>   

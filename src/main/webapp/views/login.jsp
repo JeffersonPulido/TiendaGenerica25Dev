@@ -7,24 +7,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="shortcut icon" href="../images/icono.ico"> 
         <title>Log In || Supermarket SAS</title>
-        <link rel="stylesheet" type="text/css" href="../css/login.css">
-    </head>
+        <link rel="stylesheet" type="text/css" href="../css/login1.css">
+	    <script src="https://kit.fontawesome.com/c159e6bc0d.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    </head>
     <body>
-        <div class="contenedor-general">
-            <div class="cont-formulario">
+        <div class="container" id="container">
+			<div class="form-container sign-in-container">
                 <form class="formulario" method="post" action="../Login">
-                    <h1 class="titulo">Tiendas Supermarket</h1><hr><br>
-                    <h2 class="subtitulo">Inicio de sesion</h2><br>
-                    <label>Usuario:</label><br>
-                    <input type="text" class="input-user" name="user" placeholder="Ingrese su usuario..."><br><br>
-                    <label>Contraseña:</label><br>
-                    <input type="password" class="input-password" name="password" placeholder="Ingrese su contraseña..."><br><br>
-                    <button type="submit" class="botonC" name="enviar">Ingresar</button><br><br>
-                    <a class="link">¿No tienes cuenta aun?, Registrate!</a><br>
-                    <a class="" href="../index.jsp">Volver</a><br>
-                </form>
-            </div>
-        </div>
+					<h1>Iniciar Sesion</h1><br><br><br><br><br><br>
+					<input name="user" type="text" placeholder="Ingresa tu usuario..." /><br>
+					<input name="password" type="password" placeholder="Ingresa tu contraseña..." />
+					<a href="#" class="a">Olvidaste tu contraseña?</a>
+					<input class="btn btn-success btn-block" type="submit" name="accion" value="Ingresar">
+				</form>			
+			</div>
+			<div class="overlay-container">
+				<div class="overlay">
+					<div class="overlay-panel overlay-right">
+						<h1>Hola!</h1>
+						<p>Bienvenido a SuperMarket SAS</p>
+						<img alt="Logo" src="../images/cesta.png" width="200px"><hr>
+						<a class="a" href="../index.jsp">Volver</a>
+					</div>
+				</div>
+			</div>
+		</div>
         <%
 			if(request.getParameter("men")!=null){
 			String mensaje=request.getParameter("men");
@@ -32,7 +39,4 @@
 			}
 		%>
 	</body>
-	<div class="footer-text">
-		<a href="#sec-2">©MinTIC2022 Developers</a>
-    </div>
 </html>
