@@ -23,7 +23,7 @@ public class ClientesDAO implements CRUDclientes {
         ArrayList<Clientes>list=new ArrayList<>();
         String sql="select * from clientes";
         try {
-            con=cn.getConnection();
+            con=cn.conectar();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
@@ -44,7 +44,7 @@ public class ClientesDAO implements CRUDclientes {
 	public Clientes list(int cedula_cliente) {
         String sql="select * from clientes where cedula_cliente="+cedula_cliente;
         try {
-            con=cn.getConnection();
+            con=cn.conectar();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){                
@@ -63,7 +63,7 @@ public class ClientesDAO implements CRUDclientes {
 	public boolean add(Clientes cliente) {
 	       String sql="insert into clientes (cedula_cliente, direccion_cliente, email_cliente, nombre_cliente, telefono_cliente) values ('"+cliente.getCedula_cliente()+"','"+cliente.getDireccion_cliente()+"','"+cliente.getEmail_cliente()+"','"+cliente.getNombre_cliente()+"','"+cliente.getTelefono_cliente()+"')";
 	        try {
-	            con=cn.getConnection();
+	            con=cn.conectar();
 	            ps=con.prepareStatement(sql);
 	            ps.executeUpdate();
 	        } catch (Exception e) {
@@ -75,7 +75,7 @@ public class ClientesDAO implements CRUDclientes {
 	public boolean edit(Clientes cliente) {
         String sql="update clientes set direccion_cliente = '"+cliente.getDireccion_cliente()+"', email_cliente = '"+cliente.getEmail_cliente()+"', nombre_cliente = '"+cliente.getNombre_cliente()+"', telefono_cliente = '"+cliente.getTelefono_cliente()+"' where cedula_cliente = "+cliente.getCedula_cliente();
         try {
-            con=cn.getConnection();
+            con=cn.conectar();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
@@ -87,7 +87,7 @@ public class ClientesDAO implements CRUDclientes {
 	public boolean eliminar(int cedula_cliente) {
         String sql="delete from clientes where cedula_cliente="+cedula_cliente;
         try {
-            con=cn.getConnection();
+            con=cn.conectar();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {

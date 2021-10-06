@@ -21,7 +21,7 @@ public class UsuarioDAO implements CRUD {
         ArrayList<Usuario>list=new ArrayList<>();
         String sql="select * from usuarios";
         try {
-            con=cn.getConnection();
+            con=cn.conectar();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
@@ -42,7 +42,7 @@ public class UsuarioDAO implements CRUD {
 	public Usuario list(int cedula_usuario) {
         String sql="select * from usuarios where cedula_usuario="+cedula_usuario;
         try {
-            con=cn.getConnection();
+            con=cn.conectar();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){                
@@ -61,7 +61,7 @@ public class UsuarioDAO implements CRUD {
 	public boolean add(Usuario user) {
 	       String sql="insert into usuarios (cedula_usuario, email_usuario, nombre_usuario, password, usuario) values ('"+user.getCedula_usuario()+"','"+user.getEmail_usuario()+"','"+user.getNombre_usuario()+"','"+user.getPassword()+"','"+user.getUsuario()+"')";
 	        try {
-	            con=cn.getConnection();
+	            con=cn.conectar();
 	            ps=con.prepareStatement(sql);
 	            ps.executeUpdate();
 	        } catch (Exception e) {
@@ -73,7 +73,7 @@ public class UsuarioDAO implements CRUD {
 	public boolean edit(Usuario user) {
         String sql="update usuarios set email_usuario = '"+user.getEmail_usuario()+"', nombre_usuario = '"+user.getNombre_usuario()+"', password = '"+user.getPassword()+"', usuario = '"+user.getUsuario()+"' where cedula_usuario = "+user.getCedula_usuario();
         try {
-            con=cn.getConnection();
+            con=cn.conectar();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
@@ -85,7 +85,7 @@ public class UsuarioDAO implements CRUD {
 	public boolean eliminar(int cedula_usuario) {
         String sql="delete from usuarios where cedula_usuario="+cedula_usuario;
         try {
-            con=cn.getConnection();
+            con=cn.conectar();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {

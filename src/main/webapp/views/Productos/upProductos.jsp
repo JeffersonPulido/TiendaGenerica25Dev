@@ -44,13 +44,13 @@
             <h1>Productos</h1>
             <hr>
             <h3>Cargue de archivos CSV para agregar productos</h3><br>
-			<form action="../../ControladorProductos" method="post" enctype="multipart/form-data">
+				<form action="../../ControladorProductos" method="post" enctype="multipart/form-data">
 				<div>
 					<label>Archivo</label>
-					<input type="file" value="Examinar" name="archivo">
+					<input type="file" name="archivo" required> 
 				</div>
 				<br>
-				<input class="btn btn-success" type="submit" value="Cargar Archivo" name="cargar">
+				<input class="buttons" type="submit" name="cargar" value="Cargar Archivo">
 			</form>
             <br>                  
         </div>

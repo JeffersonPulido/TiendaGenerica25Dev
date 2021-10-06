@@ -20,7 +20,7 @@ public class LoginDAO implements validar{
 	public int validacion(Usuario user) {
 		String sql = "select * from usuarios where usuario = ? and password = ?";
 		try {
-			con=cn.getConnection();
+            con=cn.conectar();
 			ps=con.prepareStatement(sql);
 			ps.setString(1, user.getUsuario());
 			ps.setString(2, user.getPassword());

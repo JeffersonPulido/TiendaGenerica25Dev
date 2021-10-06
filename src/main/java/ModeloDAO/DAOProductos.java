@@ -11,24 +11,22 @@ import Config.Conexion;
 
 
 public class DAOProductos {
-	Conexion cn = new Conexion();
-    Connection con;
-    PreparedStatement ps;
-    ResultSet rs;
 	
-	public boolean CargaProductos(String Ruta) {
-		
-		boolean resul=false;
-		
+	Conexion cn = new Conexion();
+	Connection conec = cn.conectar();
+	PreparedStatement ps = null;
+	ResultSet res = null;
+	
+	public boolean Cargar_Productos(String Ruta) {
+		boolean resul = false;
 		try {
-			String sql="load data infile '"+Ruta+"' into table productos fields terminated by ',' lines terminated by '\r\n'";
-			JOptionPane.showMessageDialog(null, sql);
-			ps=con.prepareStatement(sql);
-			resul=ps.executeUpdate()>0;
-		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null,"Error al Cargar productos:   "+ex);
+			String sql ="load data infile '"+Ruta+"' replace into table productos fields terminated by ',' lines terminated by '\r\n'";
+			ps = conec.prepareStatement(sql);
+			resul = ps.executeUpdate()>0;
+		} catch (SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error: datos leidos invalidos");
 		}
-		
 		return resul;
 	}
+
 }
