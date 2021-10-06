@@ -31,9 +31,9 @@ public class LoginDAO implements validar{
 				user.setPassword(rs.getString("password"));
 			}
 			if (r==1) {
-				return 1;
+				return r = 1;
 			}else {
-				return 0;
+				return r = 0;
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

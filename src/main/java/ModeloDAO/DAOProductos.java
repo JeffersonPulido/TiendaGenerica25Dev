@@ -16,12 +16,13 @@ public class DAOProductos {
     PreparedStatement ps;
     ResultSet rs;
 	
-	public boolean Cargar_Libros(String Ruta) {
+	public boolean CargaProductos(String Ruta) {
 		
 		boolean resul=false;
 		
 		try {
 			String sql="load data infile '"+Ruta+"' into table productos fields terminated by ',' lines terminated by '\r\n'";
+			JOptionPane.showMessageDialog(null, sql);
 			ps=con.prepareStatement(sql);
 			resul=ps.executeUpdate()>0;
 		}catch(SQLException ex) {

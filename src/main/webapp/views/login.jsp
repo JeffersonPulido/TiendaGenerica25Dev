@@ -15,7 +15,7 @@
 			<div class="form-container sign-in-container">
                 <form class="formulario" method="post" action="../Login">
 					<h1>Iniciar Sesion</h1><br><br><br><br><br><br>
-					<input name="user" type="text" placeholder="Ingresa tu usuario..." /><br>
+					<input name="user" type="text" placeholder="Ingresa tu usuario..." /><br><br>
 					<input name="password" type="password" placeholder="Ingresa tu contraseña..." />
 					<a href="#" class="a">Olvidaste tu contraseña?</a>
 					<input class="btn btn-success btn-block" type="submit" name="accion" value="Ingresar">

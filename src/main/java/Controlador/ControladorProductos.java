@@ -47,7 +47,7 @@ public class ControladorProductos extends HttpServlet {
 					escribir.close();
 					file.close();
 					JOptionPane.showMessageDialog(null, "Se Cargo el Archivo Correctamente.");
-					if(PDao.Cargar_Libros(Url+"productos.csv")) {
+					if(PDao.CargaProductos(Url+"productos.csv")) {
 						response.sendRedirect("../views/Productos/upProductos.jsp?men=Se Inserto Los Libros Correctamente");
 					}else
 					{
