@@ -43,9 +43,9 @@
 	    </header>
         <br>
         <div class="container">
+        	<hr>
             <center>
-				<h1>Bienvenidos a Tiendas Supermarket S.A.S.</h1><hr> 
-				<img src="../images/Fruta.png" width=50%>    
+				<img src="../images/sp4.gif" width=75%>    
             </center>
         </div>
         <%

@@ -20,8 +20,8 @@
         <div class="container">
             <center>
 				<h1>Bienvenidos a Tiendas Supermarket S.A.S.</h1><hr>
-				<h3><a href="views/login.jsp">Inicia sesion</a> para acceder a los modulos de gestion de la tienda.</h3>   
-				<img src="images/LOGO.jpg" width=50%>    
+				<h3><a href="views/login.jsp" style="text-decoration: none;">Inicia sesion</a> para acceder a los modulos de gestion de la tienda.</h3>   <br>
+				<img src="images/sp3.gif" width=65%>    
             </center>
             
         </div>
