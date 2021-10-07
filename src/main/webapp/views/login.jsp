@@ -24,9 +24,7 @@
 			<div class="overlay-container">
 				<div class="overlay">
 					<div class="overlay-panel overlay-right">
-						<h1>Hola!</h1>
-						<p>Bienvenido a SuperMarket SAS</p>
-						<img alt="Logo" src="../images/cesta.png" width="200px"><hr>
+						<img alt="Logo" src="../images/back.jpeg" width="70%" style="border-radius:20px;">
 						<a class="a" href="../index.jsp">Volver</a>
 					</div>
 				</div>
