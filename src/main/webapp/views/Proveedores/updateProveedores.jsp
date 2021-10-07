@@ -1,6 +1,6 @@
 
-<%@page import="Modelo.Usuario"%>
-<%@page import="ModeloDAO.UsuarioDAO"%>
+<%@page import="Modelo.Proveedores"%>
+<%@page import="ModeloDAO.ProveedorDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 	    <link rel="stylesheet" href="css/style.css">
 	    <link rel="shortcut icon" href="images/icono.ico"> 
 	    <script src="https://kit.fontawesome.com/c159e6bc0d.js" crossorigin="anonymous"></script>
-        <title>Modificar Usuario || Tienda Supermarket S.A.S.</title>
+        <title>Modificar Proveedor || Tienda Supermarket S.A.S.</title>
     </head>
     <body>
    	    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
@@ -45,26 +45,26 @@
         <div class="container">
             <div class="col-lg-6">
             <%
-	            UsuarioDAO dao=new UsuarioDAO();
-	            int cedula_usuario=Integer.parseInt((String)request.getAttribute("idper"));
-	            Usuario p=(Usuario)dao.list(cedula_usuario);
+            	ProveedorDAO dao=new ProveedorDAO();
+	            int nitproveedor=Integer.parseInt((String)request.getAttribute("idper"));
+	            Proveedores p=(Proveedores)dao.list(nitproveedor);
        		%>
-            <h1>Modificar Usuario</h1>
-            <form action="Controlador">
-                Cedula Ciudadania:<br>
-                <input class="form-control" type="text" name="txtcedula_ciudadania" value="<%= p.getCedula_usuario()%>" disabled><br>
-                <input class="form-control" type="hidden" name="txtid" value="<%= p.getCedula_usuario()%>">
-                Correo Electronico: <br>
-                <input class="form-control" type="text" name="txtemail_usuario" value="<%= p.getEmail_usuario()%>" required><br>
+            <h1>Modificar Proveedor</h1>
+            <form action="ControladorProveedores">
+                Nit:<br>
+                <input class="form-control" type="text" name="txtnitproveedor" value="<%= p.getNitproveedor()%>" disabled><br>
+                <input class="form-control" type="hidden" name="txtid" value="<%= p.getNitproveedor()%>">
+                Ciudad: <br>
+                <input class="form-control" type="text" name="txtciudad_proveedor" value="<%= p.getCiudad_proveedor()%>" required><br>
+                Direccion: <br>
+                <input class="form-control" type="text" name="txtdireccion_proveedor" value="<%= p.getDireccion_proveedor()%>" required><br>
                 Nombre Completo: <br>
-                <input class="form-control" type="text" name="txtnombre_usuario" value="<%= p.getNombre_usuario()%>" required><br>
-                Contraseña: <br>
-                <input class="form-control" type="text" name="txtpassword" value="<%= p.getPassword()%>" required><br>
-                Usuario: <br>
-                <input class="form-control" type="text" name="txtusuario" value="<%= p.getUsuario()%>" required><br>
+                <input class="form-control" type="text" name="txtnombre_proveedor" value="<%= p.getNombre_proveedor()%>" required><br>
+                Telefono: <br>
+                <input class="form-control" type="text" name="txttelefono_proveedor" value="<%= p.getTelefono_proveedor()%>" required><br>
 
                 <input class="btn btn-primary" type="submit" name="accion" value="Actualizar"> <hr>
-                <a href="Controlador?accion=listar">Regresar</a><br><br>
+                <a href="ControladorProveedores?accion=listar">Regresar</a><br><br>
             </form>
           </div>
           

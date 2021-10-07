@@ -29,7 +29,7 @@
 	              <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
 	                <li><a href="Controlador?accion=listar" class="nav-link">Usuarios</a></li>
 	                <li><a href="ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
-	                <li><a href="#why-us-section" class="nav-link">Proveedores</a></li>
+	                <li><a href="ControladorProveedores?accion=listar" class="nav-link">Proveedores</a></li>
 	                <li><a href="views/Productos/upProductos.jsp" class="nav-link">Productos</a></li>
 	                <li><a href="#blog-section" class="nav-link">Ventas</a></li>
 	                <li><a href="views/reportes.jsp" class="nav-link">Reportes</a></li>
@@ -46,15 +46,15 @@
                 <h3>Agregar Usuario</h3>
                 <form action="Controlador">
                     Cedula Ciudadania:<br>
-                    <input class="form-control" type="text" name="txtcedula_usuario"><br>
+                    <input class="form-control" type="text" name="txtcedula_usuario" required><br>
                     Correo Electronico: <br>
-                    <input class="form-control" type="text" name="txtemail_usuario"><br>
+                    <input class="form-control" type="text" name="txtemail_usuario" required><br>
                     Nombre Completo: <br>
-                    <input class="form-control" type="text" name="txtnombre_usuario"><br>
+                    <input class="form-control" type="text" name="txtnombre_usuario" required><br>
                     Password: <br>
-                    <input class="form-control" type="text" name="txtpassword"><br>
+                    <input class="form-control" type="text" name="txtpassword" required><br>
                     Usuario: <br>
-                    <input class="form-control" type="text" name="txtusuario"><br>
+                    <input class="form-control" type="text" name="txtusuario" required><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Agregar"><hr>
                     <a href="Controlador?accion=listar">Regresar</a><br><br>
                 </form>

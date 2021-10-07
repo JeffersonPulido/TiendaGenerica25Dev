@@ -1,7 +1,7 @@
 <%@page import="java.util.Iterator"%>
-<%@page import="Modelo.Clientes"%>
+<%@page import="Modelo.Proveedores"%>
 <%@page import="java.util.List"%>
-<%@page import="ModeloDAO.ClientesDAO"%>
+<%@page import="ModeloDAO.ProveedorDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
   <head>
@@ -27,7 +27,7 @@
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap.min.js"></script>
     <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css"/>
-    <title>Clientes || Supermarket SAS</title>
+    <title>Proveedores || Supermarket SAS</title>
         
     <script>
         $(document).ready(function() {
@@ -69,18 +69,18 @@
     </header>
     <!--CONTENT-->
             <div class="container">
-            <h1>Clientes</h1>
-            <a class="btn btn-success" href="ControladorClientes?accion=add"><i class="fas fa-user-plus"></i> Agregar Cliente Nuevo</a>
+            <h1>Proveedores</h1>
+            <a class="btn btn-success" href="ControladorProveedores?accion=add"><i class="fas fa-user-plus"></i> Agregar Proveedor Nuevo</a>
             <hr>
             <br>
                             
             <table class="table table-reponsive table-striped table-hover text-center table-bordered" id="TablaDat" >
                <thead>
                   <tr>
-                      <th>CEDULA CIUDADANIA</th>
-                      <th>DIRECCION CLIENTE</th>
-                      <th>CORREO ELECTRONICO</th>
-                      <th>NOMBRE CLIENTE</th>
+                      <th>NIT</th>
+                      <th>CIUDAD</th>
+                      <th>DIRECCION</th>
+                      <th>NOMBRE</th>
                       <th>TELEFONO</th>
                       <th>ACCIONES</th>
                   </tr>
@@ -88,21 +88,21 @@
                 <tbody>
                     <tr>
                     	<%
-		                    ClientesDAO dao=new ClientesDAO();
-		                    List<Clientes>list=dao.listar();
-		                    Iterator<Clientes>iter=list.iterator();
-		                    Clientes per=null;
+		                    ProveedorDAO dao=new ProveedorDAO();
+		                    List<Proveedores>list=dao.listar();
+		                    Iterator<Proveedores>iter=list.iterator();
+		                    Proveedores per=null;
 		                    while(iter.hasNext()){
-	                       	per=iter.next();
+	                       per=iter.next();
                 		%>
-                        <td><%= per.getCedula_cliente()%></td>
-                        <td><%= per.getDireccion_cliente()%></td>
-                        <td><%= per.getEmail_cliente()%></td>
-                        <td><%= per.getNombre_cliente()%></td>
-                        <td><%= per.getTelefono_cliente()%></td>
+                        <td><%= per.getNitproveedor()%></td>
+                        <td><%= per.getCiudad_proveedor()%></td>
+                        <td><%= per.getDireccion_proveedor()%></td>
+                        <td><%= per.getNombre_proveedor()%></td>
+                        <td><%= per.getTelefono_proveedor()%></td>
                         <td>
-                            <a class="btn btn-warning" href="ControladorClientes?accion=editar&cedula_cliente=<%= per.getCedula_cliente()%>"><i class="fas fa-user-edit"></i></a>
-                            <a class="btn btn-danger" href="ControladorClientes?accion=eliminar&cedula_cliente=<%= per.getCedula_cliente()%>"><i class="fas fa-user-times"></i></a>
+                            <a class="btn btn-warning" href="ControladorProveedores?accion=editar&nitproveedor=<%= per.getNitproveedor()%>"><i class="fas fa-user-edit"></i></a>
+                            <a class="btn btn-danger" href="ControladorProveedores?accion=eliminar&nitproveedor=<%= per.getNitproveedor()%>"><i class="fas fa-user-times"></i></a>
                         </td>
                     </tr>
                     <%}%>

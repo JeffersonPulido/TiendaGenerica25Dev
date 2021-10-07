@@ -30,7 +30,7 @@
 	              <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
 	                <li><a href="Controlador?accion=listar" class="nav-link">Usuarios</a></li>
 	                <li><a href="ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
-	                <li><a href="#why-us-section" class="nav-link">Proveedores</a></li>
+	                <li><a href="ControladorProveedores?accion=listar" class="nav-link">Proveedores</a></li>
 	                <li><a href="views/Productos/upProductos.jsp" class="nav-link">Productos</a></li>
 	                <li><a href="#blog-section" class="nav-link">Ventas</a></li>
 	                <li><a href="views/reportes.jsp" class="nav-link">Reportes</a></li>
@@ -55,13 +55,13 @@
                 <input class="form-control" type="text" name="txtcedula_cliente" value="<%= p.getCedula_cliente()%>" disabled><br>
                 <input class="form-control" type="hidden" name="txtid" value="<%= p.getCedula_cliente()%>">
                 Direccion: <br>
-                <input class="form-control" type="text" name="txtdireccion_cliente" value="<%= p.getDireccion_cliente()%>"><br>
+                <input class="form-control" type="text" name="txtdireccion_cliente" value="<%= p.getDireccion_cliente()%>" required><br>
                 Correo Electronico: <br>
-                <input class="form-control" type="text" name="txtemail_cliente" value="<%= p.getEmail_cliente()%>"><br>
+                <input class="form-control" type="text" name="txtemail_cliente" value="<%= p.getEmail_cliente()%>" required><br>
                 Nombre Completo: <br>
-                <input class="form-control" type="text" name="txtnombre_cliente" value="<%= p.getNombre_cliente()%>"><br>
+                <input class="form-control" type="text" name="txtnombre_cliente" value="<%= p.getNombre_cliente()%>" required><br>
                 Telefono: <br>
-                <input class="form-control" type="text" name="txttelefono_cliente" value="<%= p.getTelefono_cliente()%>"><br>
+                <input class="form-control" type="text" name="txttelefono_cliente" value="<%= p.getTelefono_cliente()%>" required><br>
 
                 <input class="btn btn-primary" type="submit" name="accion" value="Actualizar"> <hr>
                 <a href="ControladorClientes?accion=listar">Regresar</a><br><br>

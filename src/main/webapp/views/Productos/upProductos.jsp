@@ -27,7 +27,7 @@
               <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                 <li><a href="../../Controlador?accion=listar" class="nav-link">Usuarios</a></li>
                 <li><a href="../../ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
-                <li><a href="#why-us-section" class="nav-link">Proveedores</a></li>
+                <li><a href="../../ControladorProveedores?accion=listar" class="nav-link">Proveedores</a></li>
                 <li><a href="upProductos.jsp" class="nav-link">Productos</a></li>
                 <li><a href="#blog-section" class="nav-link">Ventas</a></li>
                 <li><a href="../reportes.jsp" class="nav-link">Reportes</a></li>
@@ -50,7 +50,7 @@
 					<input type="file" name="archivo" required> 
 				</div>
 				<br>
-				<input class="buttons" type="submit" name="cargar" value="Cargar Archivo">
+				<input class="buttons" type="submit" name="cargar" value="Cargar Archivo" required>
 			</form>
             <br>                  
         </div>

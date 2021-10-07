@@ -1,7 +1,5 @@
-
-<%@page import="Modelo.Usuario"%>
-<%@page import="ModeloDAO.UsuarioDAO"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,10 +14,11 @@
 	    <link rel="stylesheet" href="css/style.css">
 	    <link rel="shortcut icon" href="images/icono.ico"> 
 	    <script src="https://kit.fontawesome.com/c159e6bc0d.js" crossorigin="anonymous"></script>
-        <title>Modificar Usuario || Tienda Supermarket S.A.S.</title>
+        <title>AÒadir Proveedor || Tienda Supermarket S.A.S.</title>
     </head>
     <body>
-   	    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+        <!--NAV BAR-->
+	    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
 	      <div class="container">
 	        <div class="row align-items-center position-relative">
 	          <div class="site-logo">
@@ -34,7 +33,7 @@
 	                <li><a href="views/Productos/upProductos.jsp" class="nav-link">Productos</a></li>
 	                <li><a href="#blog-section" class="nav-link">Ventas</a></li>
 	                <li><a href="views/reportes.jsp" class="nav-link">Reportes</a></li>
-	                <li><a href="views/login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
+	                <li><a href="login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
 	              </ul>
 	            </nav>
 	          </div>
@@ -44,30 +43,23 @@
 	    </header>
         <div class="container">
             <div class="col-lg-6">
-            <%
-	            UsuarioDAO dao=new UsuarioDAO();
-	            int cedula_usuario=Integer.parseInt((String)request.getAttribute("idper"));
-	            Usuario p=(Usuario)dao.list(cedula_usuario);
-       		%>
-            <h1>Modificar Usuario</h1>
-            <form action="Controlador">
-                Cedula Ciudadania:<br>
-                <input class="form-control" type="text" name="txtcedula_ciudadania" value="<%= p.getCedula_usuario()%>" disabled><br>
-                <input class="form-control" type="hidden" name="txtid" value="<%= p.getCedula_usuario()%>">
-                Correo Electronico: <br>
-                <input class="form-control" type="text" name="txtemail_usuario" value="<%= p.getEmail_usuario()%>" required><br>
-                Nombre Completo: <br>
-                <input class="form-control" type="text" name="txtnombre_usuario" value="<%= p.getNombre_usuario()%>" required><br>
-                Contrase√±a: <br>
-                <input class="form-control" type="text" name="txtpassword" value="<%= p.getPassword()%>" required><br>
-                Usuario: <br>
-                <input class="form-control" type="text" name="txtusuario" value="<%= p.getUsuario()%>" required><br>
-
-                <input class="btn btn-primary" type="submit" name="accion" value="Actualizar"> <hr>
-                <a href="Controlador?accion=listar">Regresar</a><br><br>
-            </form>
-          </div>
-          
+                <h3>Agregar Proveedor</h3>
+                <form action="ControladorProveedores">
+                    Nit:<br>
+                    <input class="form-control" type="text" name="txtnitproveedor" required><br>
+                    Ciudad: <br>
+                    <input class="form-control" type="text" name="txtciudad_proveedor" required><br>
+                    Direccion: <br>
+                    <input class="form-control" type="text" name="txtdireccion_proveedor" required><br>
+                    Nombre Completo: <br>
+                    <input class="form-control" type="text" name="txtnombre_proveedor" required><br>
+                    Telefono: <br>
+                    <input class="form-control" type="text" name="txttelefono_proveedor" required><br>
+                    <input class="btn btn-primary" type="submit" name="accion" value="Agregar"><hr>
+                    <a href="ControladorProveedores?accion=listar">Regresar</a><br><br>
+                </form>
+            </div>
         </div>
     </body>
+    
 </html>

@@ -29,7 +29,7 @@
 	              <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
 	                <li><a href="Controlador?accion=listar" class="nav-link">Usuarios</a></li>
 	                <li><a href="ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
-	                <li><a href="#why-us-section" class="nav-link">Proveedores</a></li>
+	                <li><a href="ControladorProveedores?accion=listar" class="nav-link">Proveedores</a></li>
 	                <li><a href="views/Productos/upProductos.jsp" class="nav-link">Productos</a></li>
 	                <li><a href="#blog-section" class="nav-link">Ventas</a></li>
 	                <li><a href="views/reportes.jsp" class="nav-link">Reportes</a></li>
@@ -46,15 +46,15 @@
                 <h3>Agregar Cliente</h3>
                 <form action="ControladorClientes">
                     Cedula Ciudadania:<br>
-                    <input class="form-control" type="text" name="txtcedula_cliente"><br>
+                    <input class="form-control" type="text" name="txtcedula_cliente" required><br>
                     Direccion: <br>
-                    <input class="form-control" type="text" name="txtdireccion_cliente"><br>
+                    <input class="form-control" type="text" name="txtdireccion_cliente" required><br>
                     Correo Electronico: <br>
-                    <input class="form-control" type="text" name="txtemail_cliente"><br>
+                    <input class="form-control" type="text" name="txtemail_cliente" required><br>
                     Nombre Completo: <br>
-                    <input class="form-control" type="text" name="txtnombre_cliente"><br>
+                    <input class="form-control" type="text" name="txtnombre_cliente" required><br>
                     Telefono: <br>
-                    <input class="form-control" type="text" name="txttelefono_cliente"><br>
+                    <input class="form-control" type="text" name="txttelefono_cliente" required><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Agregar"><hr>
                     <a href="ControladorClientes?accion=listar">Regresar</a><br><br>
                 </form>
