@@ -30,7 +30,7 @@
 	                <li><a href="../Controlador?accion=listar" class="nav-link">Usuarios</a></li>
 	                <li><a href="../ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
 	                <li><a href="../ControladorProveedores?accion=listar" class="nav-link">Proveedores</a></li>
-	                <li><a href="Productos/upProductos.jsp" class="nav-link">Productos</a></li>
+	                <li><a href="../ControladorProductos?accion=listar" class="nav-link">Productos</a></li>
 	                <li><a href="#blog-section" class="nav-link">Ventas</a></li>
 	                <li><a href="reportes.jsp" class="nav-link">Reportes</a></li>
 	                <li><a href="login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>

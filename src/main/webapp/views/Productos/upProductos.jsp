@@ -20,7 +20,7 @@
       <div class="container">
         <div class="row align-items-center position-relative">
           <div class="site-logo">
-            <a href="views/home.jsp" class="text-black"><span class="text-primary"></span><img src="../../images/LOGO.jpg" style="width: 20%;"></a>
+            <a href="../home.jsp" class="text-black"><span class="text-primary"></span><img src="../../images/LOGO.jpg" style="width: 20%;"></a>
           </div>
           <div class="col-12">
             <nav class="site-navigation text-right ml-auto " role="navigation">
@@ -28,7 +28,7 @@
                 <li><a href="../../Controlador?accion=listar" class="nav-link">Usuarios</a></li>
                 <li><a href="../../ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
                 <li><a href="../../ControladorProveedores?accion=listar" class="nav-link">Proveedores</a></li>
-                <li><a href="upProductos.jsp" class="nav-link">Productos</a></li>
+                <li><a href="../../ControladorProductos?accion=listar" class="nav-link">Productos</a></li>
                 <li><a href="#blog-section" class="nav-link">Ventas</a></li>
                 <li><a href="../reportes.jsp" class="nav-link">Reportes</a></li>
                 <li><a href="../login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
@@ -44,15 +44,14 @@
             <h1>Productos</h1>
             <hr>
             <h3>Cargue de archivos CSV para agregar productos</h3><br>
-				<form action="../../ControladorProductos" method="post" enctype="multipart/form-data">
+			<form action="../../ControladorProductos" method="post" enctype="multipart/form-data">
 				<div>
 					<label>Archivo</label>
 					<input type="file" name="archivo" required> 
 				</div>
 				<br>
 				<input class="buttons" type="submit" name="cargar" value="Cargar Archivo" required>
-			</form>
-            <br>                  
+			</form>               
         </div>
         <div class="footer-text">
 			<a href="#sec-2">©MinTIC2022 Developers</a>

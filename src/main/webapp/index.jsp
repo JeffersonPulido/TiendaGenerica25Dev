@@ -26,6 +26,12 @@
             
         </div>
     </body>
+                    <%
+			if(request.getParameter("men")!=null){
+			String mensaje=request.getParameter("men");
+			out.print("<script>alert('"+mensaje+"');</script>");
+			}
+		%>
     <div class="footer-text">
 		<a href="#sec-2">©MinTIC2022 Developers</a>
     </div>

@@ -1,6 +1,6 @@
 
-<%@page import="Modelo.Proveedores"%>
-<%@page import="ModeloDAO.ProveedorDAO"%>
+<%@page import="Modelo.Productos"%>
+<%@page import="ModeloDAO.ProductosDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 	    <link rel="stylesheet" href="css/style.css">
 	    <link rel="shortcut icon" href="images/icono.ico"> 
 	    <script src="https://kit.fontawesome.com/c159e6bc0d.js" crossorigin="anonymous"></script>
-        <title>Modificar Proveedor || Tienda Supermarket S.A.S.</title>
+        <title>Modificar Producto || Tienda Supermarket S.A.S.</title>
     </head>
     <body>
    	    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
@@ -45,26 +45,27 @@
         <div class="container">
             <div class="col-lg-6">
             <%
-            	ProveedorDAO dao=new ProveedorDAO();
-	            int nitproveedor=Integer.parseInt((String)request.getAttribute("idper"));
-	            Proveedores p=(Proveedores)dao.list(nitproveedor);
+            	ProductosDAO dao=new ProductosDAO();
+	            int codigo_producto=Integer.parseInt((String)request.getAttribute("idper"));
+	            Productos p=(Productos)dao.list(codigo_producto);
        		%>
-            <h1>Modificar Proveedor</h1>
-            <form action="ControladorProveedores">
-                Nit:<br>
-                <input class="form-control" type="text" name="txtnitproveedor" value="<%= p.getNitproveedor()%>" disabled><br>
-                <input class="form-control" type="hidden" name="txtid" value="<%= p.getNitproveedor()%>">
-                Ciudad: <br>
-                <input class="form-control" type="text" name="txtciudad_proveedor" value="<%= p.getCiudad_proveedor()%>" required><br>
-                Direccion: <br>
-                <input class="form-control" type="text" name="txtdireccion_proveedor" value="<%= p.getDireccion_proveedor()%>" required><br>
-                Nombre Completo: <br>
-                <input class="form-control" type="text" name="txtnombre_proveedor" value="<%= p.getNombre_proveedor()%>" required><br>
-                Telefono: <br>
-                <input class="form-control" type="text" name="txttelefono_proveedor" value="<%= p.getTelefono_proveedor()%>" required><br>
-
+            <h1>Modificar Producto</h1>
+            <form action="ControladorProductos">
+                Codigo:<br>
+                <input class="form-control" type="text" name="txtcodigo_producto" value="<%= p.getCodigo_producto()%>" disabled><br>
+                <input class="form-control" type="hidden" name="txtid" value="<%= p.getCodigo_producto()%>">
+                Nombre: <br>
+                <input class="form-control" type="text" name="txtnombre_producto" value="<%= p.getNombre_producto()%>" required><br>
+                NIT Proveedor: <br>
+                <input class="form-control" type="text" name="txtnitproveedor" value="<%= p.getNitproveedor()%>" required><br>
+                Precio Compra: <br>
+                <input class="form-control" type="text" name="txtprecio_compra" value="<%= p.getPrecio_compra()%>" required><br>
+                IVA: <br>
+                <input class="form-control" type="text" name="txtivacompra" value="<%= p.getIvacompra()%>" required><br>
+				Precio Venta: <br>
+                <input class="form-control" type="text" name="txtprecio_venta" value="<%= p.getPrecio_venta()%>" required><br>
                 <input class="btn btn-primary" type="submit" name="accion" value="Actualizar"> <hr>
-                <a href="ControladorProveedores?accion=listar">Regresar</a><br><br>
+                <a href="ControladorProductos?accion=listar">Regresar</a><br><br>
             </form>
           </div>
           
