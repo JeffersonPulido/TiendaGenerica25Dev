@@ -15,7 +15,8 @@ public class UsuarioDAO implements CRUD {
     PreparedStatement ps;
     ResultSet rs;
     Usuario p=new Usuario();
-	
+        
+	/*========================================CRUD=============================================*/
 	@Override //SELECT * FROM TOTAL
 	public List listar() {
         ArrayList<Usuario>list=new ArrayList<>();
@@ -92,5 +93,5 @@ public class UsuarioDAO implements CRUD {
         }
         return false;
 	}
-
+	/*========================================CRUD=============================================*/
 }

@@ -18,6 +18,30 @@ public class ClientesDAO implements CRUDclientes {
     ResultSet rs;
     Clientes c=new Clientes();
 	
+    /*========================================VENTAS=============================================*/
+    
+    public Clientes BuscarCliente(int cedula_cliente){
+    	Clientes c = new Clientes();
+        String consulta = "SELECT * FROM clientes WHERE cedula_cliente = ?";
+        con = cn.conectar();
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, cedula_cliente);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                c.setCedula_cliente(rs.getInt("cedula_cliente"));
+                c.setDireccion_cliente(rs.getString("direccion_cliente"));
+                c.setEmail_cliente(rs.getString("email_cliente"));
+                c.setNombre_cliente(rs.getString("nombre_cliente"));
+                c.setTelefono_cliente(rs.getString("telefono_cliente"));
+                //System.err.println(""+usuario.getNombre());
+              }
+        } catch (Exception e) {
+        }
+        return c;
+    }
+    
+	/*========================================CRUD=============================================*/
 	@Override //SELECT * FROM TOTAL
 	public List listar() {
         ArrayList<Clientes>list=new ArrayList<>();

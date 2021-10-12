@@ -18,7 +18,32 @@ public class ProductosDAO implements CRUDproductos {
     PreparedStatement ps;
     ResultSet rs;
     Productos p=new Productos();
-	
+    /*=============================VENTAS=====================================*/
+    
+    public Productos listarId(int id) {
+    	Productos pr = new Productos();
+    	String sql = "select * from productos where codigo_producto="+id;
+    	try {
+			con = cn.conectar();
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while (rs.next()) {
+				pr.setCodigo_producto(rs.getInt(1));
+				pr.setNombre_producto(rs.getString(2));
+				pr.setNitproveedor(rs.getInt(3));
+				pr.setPrecio_compra(rs.getDouble(4));
+				pr.setIvacompra(rs.getDouble(5));
+				pr.setPrecio_venta(rs.getDouble(6));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return pr;
+    	
+    	
+    }
+    
+    /*=============================CRUD=====================================*/
 	@Override//SELECT * FROM TOTAL
 	public List listar() {
 		ArrayList<Productos>list=new ArrayList<>();
