@@ -24,31 +24,26 @@ public class Login extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String accion = request.getParameter("accion");
-		if (accion.equals("Ingresar")) {
-			String user, pass;
-			user = request.getParameter("user");
-			pass = request.getParameter("password");
-			u.setUsuario(user);
-			u.setPassword(pass);
-			r = lg.validacion(u);
-			if (r==1) {
-				response.sendRedirect("views/home.jsp?men=Bienvenido!");
-			}else {
-				response.sendRedirect("views/login.jsp?men=Usuario o contraseña errados, intente de nuevo");
-			}
-			//admininicial
-			//admin123456
+        String accion = request.getParameter("accion");
+        if (accion.equalsIgnoreCase("Ingresar")) {
+        	String documento = request.getParameter("user");
+            String pass = request.getParameter("password");
+            u = lg.Validar(documento, pass);
+            System.out.print("dato"+u.getNombre_usuario());
+            if(u.getNombre_usuario()!= null){
+                System.out.print("dato1"+u.getNombre_usuario());
+                request.setAttribute("usuario", u);
+                request.getRequestDispatcher("views/home.jsp?men=Bienvenido!").forward(request, response);
+                
 
-			
-			/*
-			if (user.equals("admininicial") && pass.equals("admin123456")) {
-				response.sendRedirect("views/home.jsp?men=Bienvenido Administrador");
-			}else {
-				response.sendRedirect("views/login.jsp?men=Usuario o contraseña errados, intente de nuevo");
-			}
-			*/
-		}
+            }else{
+                request.getRequestDispatcher("index.jsp?men=Datos Erroneos!").forward(request, response);
+            }
+            
+
+        }else{
+            request.getRequestDispatcher("index.jsp?men=Datos Erroneos!").forward(request, response);
+        }
 
 	}
 

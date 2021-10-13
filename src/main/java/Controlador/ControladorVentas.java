@@ -28,11 +28,12 @@ public class ControladorVentas extends HttpServlet {
     
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
-        if (menu.equals("Principal")) {
-            request.getRequestDispatcher("views/Ventas/regVenta.jsp").forward(request, response);
-        }
         if (menu.equals("Ventas")) {
             switch (accion) {
                 case "BuscarCliente":
@@ -41,13 +42,10 @@ public class ControladorVentas extends HttpServlet {
                     request.setAttribute("cliente", usuario);
                     break;
                 default:
+                    request.getRequestDispatcher("../views/Ventas/regVenta.jsp").forward(request, response);
             }
-            request.getRequestDispatcher("regVenta.jsp").forward(request, response);
+            request.getRequestDispatcher("../views/Ventas/regVenta.jsp").forward(request, response);
         }
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	}
-
 }

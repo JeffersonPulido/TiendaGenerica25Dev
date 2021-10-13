@@ -11,7 +11,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	    <!-- Style -->
 	    <link rel="shortcut icon" href="images/icono.ico"> 
-        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/footer.css">
         <title>Tienda Supermarket S.A.S.</title>
     </head>
     <body>
