@@ -1,4 +1,7 @@
 @charset "ISO-8859-1";
+body{
+   overflow-x: hidden;
+}
 .footer-text {
     position: absolute;
     bottom: 0;

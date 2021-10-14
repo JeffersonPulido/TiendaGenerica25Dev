@@ -42,7 +42,7 @@
     <!--CONTENT-->
             <div class="container">
             <h1>Usuarios</h1>
-            <a class="btn btn-success" href="Controlador?accion=add"><i class="fas fa-user-plus"></i> Agregar Usuario Nuevo</a>
+            <a class="btn btn-success" href="Controlador?accion=add"><i class="fas fa-plus-circle"></i> Agregar Usuario Nuevo</a>
             <hr>
             <br>
                             
@@ -73,8 +73,8 @@
                         <td><%= per.getPassword()%></td>
                         <td><%= per.getUsuario()%></td>
                         <td>
-                            <a class="btn btn-warning" href="Controlador?accion=editar&cedula_usuario=<%= per.getCedula_usuario()%>"><i class="fas fa-user-edit"></i></a>
-                            <a class="btn btn-danger" href="Controlador?accion=eliminar&cedula_usuario=<%= per.getCedula_usuario()%>"><i class="fas fa-user-times"></i></a>
+                            <a class="btn btn-warning" href="Controlador?accion=editar&cedula_usuario=<%= per.getCedula_usuario()%>"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" href="Controlador?accion=eliminar&cedula_usuario=<%= per.getCedula_usuario()%>"><i class="fas fa-minus-circle"></i></a>
                         </td>
                     </tr>
                     <%}%>

@@ -20,9 +20,9 @@
         <div class="container">
             <center>
 				<h1>Modulos Reportes</h1><hr> <br><br><br>
-			    <a href="Reportes/listuser.jsp" class="botonU">Listado de Usuarios</a><br><br><br><br>
-			    <a href="Reportes/listcliente.jsp" class="botonU">Listado de Clientes</a><br><br><br><br>
-			    <a href="Reportes/ventasxcliente.jsp" class="botonU">Ventas por Cliente</a>
+			    <a href="Reportes/listuser.jsp" class="botonU"><i class="fas fa-users"></i> Listado de Usuarios</a><br><br><br><br>
+			    <a href="Reportes/listcliente.jsp" class="botonU"><i class="fas fa-user-tie"></i> Listado de Clientes</a><br><br><br><br>
+			    <a href="Reportes/ventasxcliente.jsp" class="botonU"><i class="fas fa-hand-holding-usd"></i> Ventas por Cliente</a>
             </center>
         </div>
 	</body>

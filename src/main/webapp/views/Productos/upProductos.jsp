@@ -20,11 +20,11 @@
             <h3>Cargue de archivos CSV para agregar productos</h3><br>
 			<form action="../../ControladorProductos" method="post" enctype="multipart/form-data">
 				<div>
-					<label>Archivo</label>
 					<input type="file" name="archivo" required> 
 				</div>
 				<br>
-				<input class="buttons" type="submit" name="cargar" value="Cargar Archivo" required>
+				<!-- <a class="btn btn-info" type="submit" name="cargar" value="Cargar Archivo" required><i class="fas fa-file-csv"></i> Cargar Archivo</a> -->
+				<input class="btn btn-success" type="submit" name="cargar" value="Cargar Archivo" required>
 			</form>               
         </div>
 

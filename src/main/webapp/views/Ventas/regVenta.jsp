@@ -10,8 +10,7 @@
 	    <!-- Bootstrap CSS -->
 	    <link rel="stylesheet" href="css/bootstrap.min.css">
 	    <!-- Style -->
-	    <link rel="stylesheet" href="css/estilos.css">
-	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/footer.css">
 	    <link rel="shortcut icon" href="images/icono.ico"> 
 	    <script src="https://kit.fontawesome.com/c159e6bc0d.js" crossorigin="anonymous"></script>
         <title>Registrar Venta || Tienda Supermarket S.A.S.</title>
@@ -24,43 +23,19 @@
         </style>
     </head>
 	<body>
-        <!--NAV BAR-->
-	    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
-	      <div class="container">
-	        <div class="row align-items-center position-relative">
-	          <div class="site-logo">
-	            <a href="views/home.jsp" class="text-black"><span class="text-primary"></span><img src="images/LOGO.jpg" style="width: 20%;"></a>
-	          </div>
-	          <div class="col-12">
-	            <nav class="site-navigation text-right ml-auto " role="navigation">
-	              <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-	                <li><a href="Controlador?accion=listar" class="nav-link">Usuarios</a></li>
-	                <li><a href="ControladorClientes?accion=listar" class="nav-link">Clientes</a></li>
-	                <li><a href="ControladorProveedores?accion=listar" class="nav-link">Proveedores</a></li>
-	                <li><a href="ControladorProductos?accion=listar" class="nav-link">Productos</a></li>
-	                <li><a href="ControladorVentas?menu=Principal" class="nav-link">Ventas</a></li>
-	                <li><a href="reportes.jsp" class="nav-link">Reportes</a></li>
-	                <li><a href="login.jsp"><i class="fas fa-power-off"></i> Salir</a></li>
-	              </ul>
-	            </nav>
-	          </div>
-	          <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-	        </div>
-	      </div>
-	    </header><hr>
 		<div class="row">
             <div class="col-md-5 seccion1 ">
                 <div class="card ">
                     <h5 class="card-header">Datos Cliente</h5>
                     <div class="card-body">
-                        <form method="post" action="ControladorVentas?menu=Ventas">
+                        <form method="post" action="ControladorV?menu=Ventas">
                             <div class="row">
-                                <div class="col-md-4 d-flex">
-                                    <input type="number" name="documentocliente" class="form-control" placeholder="Documento cliente" value="${cliente.getCedula_cliente()}">
+                                <div class="col-md-12 d-flex form-group">
+                                    <input type="number" name="documentocliente" class="form-control" placeholder="Documento Cliente" value="${cliente.getCedula_cliente()}">
                                     <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-dark">
                                 </div>
-                                <div class="col-md-8 d-flex">
-                                    <input type="text" name="nombrecliente" class="form-control" placeholder="Nombre cliente" value="${cliente.getNombre_cliente()}">
+                                <div class="col-md-12 d-flex">
+                                    <input type="text" name="nombrecliente" class="form-control" placeholder="Nombre Cliente" value="${cliente.getNombre_cliente()}" disabled>
                                 </div>
                             </div>
                             <div class="row"></div>
@@ -71,7 +46,7 @@
                 <div class="card">
                     <h5 class="card-header">Datos producto</h5>
                     <div class="card-body">
-                        <form action="Controlador?menu=Ventas" method="post">
+                        <form action="ControladorV?menu=Ventas" method="post">
                             <div class="row">
                                 <div class="col-md-12 d-flex form-group">
                                     <input type="number" name="codigoproducto" class="form-control" placeholder="Codigo Producto">
@@ -96,7 +71,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="form-group row">
-                             <label class="col-sm-2 col-form-label">Factura</label>
+                             <label class="col-sm-2 col-form-label">N° Factura</label>
                         <input class="form-control col-md-4" type="text" name="txtnumerofactura">
                         </div>
                        

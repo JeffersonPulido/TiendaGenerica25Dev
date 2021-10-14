@@ -42,7 +42,7 @@
     <!--CONTENT-->
             <div class="container">
             <h1>Productos</h1>
-            <a class="btn btn-success" href="views/Productos/upProductos.jsp"><i class="fas fa-user-plus"></i> Agregar archivo plano</a>
+            <a class="btn btn-success" href="views/Productos/upProductos.jsp"><i class="fas fa-plus-circle"></i> Agregar archivo plano</a>
             <hr>
             <br>
                             
@@ -75,8 +75,8 @@
                         <td><%= per.getIvacompra()%></td>
                         <td><%= per.getPrecio_venta()%></td>
                         <td>
-                            <a class="btn btn-warning" href="ControladorProductos?accion=editar&codigo_producto=<%= per.getCodigo_producto()%>"><i class="fas fa-user-edit"></i></a>
-                            <a class="btn btn-danger" href="ControladorProductos?accion=eliminar&codigo_producto=<%= per.getCodigo_producto()%>"><i class="fas fa-user-times"></i></a>
+                            <a class="btn btn-warning" href="ControladorProductos?accion=editar&codigo_producto=<%= per.getCodigo_producto()%>"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" href="ControladorProductos?accion=eliminar&codigo_producto=<%= per.getCodigo_producto()%>"><i class="fas fa-minus-circle"></i></a>
                         </td>
                     </tr>
                     <%}%>

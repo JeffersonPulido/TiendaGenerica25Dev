@@ -16,7 +16,7 @@
     <body>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="home.jsp">Tienda Supermarket S.A.S.</a>
+            <a class="navbar-brand" href="views/Principal.jsp" target="miContenedor">Tienda Supermarket S.A.S.</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,26 +29,26 @@
                     </li>
                      -->
                    	<li class="nav-item">
-                        <a class="nav-link" href="Controlador?accion=listar" target="miContenedor">Usuarios</a>
+                        <a class="nav-link" href="Controlador?accion=listar" target="miContenedor"><i class="fas fa-users"></i> Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ControladorClientes?accion=listar" target="miContenedor">Clientes</a>
+                        <a class="nav-link" href="ControladorClientes?accion=listar" target="miContenedor"><i class="fas fa-user-tie"></i> Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ControladorProveedores?accion=listar" target="miContenedor">Proveedores</a>
+                        <a class="nav-link" href="ControladorProveedores?accion=listar" target="miContenedor" ><i class="fas fa-boxes"></i> Proveedores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ControladorProductos?accion=listar" target="miContenedor">Productos</a>
+                        <a class="nav-link" href="ControladorProductos?accion=listar" target="miContenedor"><i class="fas fa-carrot"></i> Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ControladorVentas?menu=Ventas&accion=default" target="miContenedor">Ventas</a>
+                        <a class="nav-link" href="ControladorV?menu=Principal" target="miContenedor"><i class="fas fa-money-bill-alt"></i> Ventas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="views/reportes.jsp" target="miContenedor">Reportes</a>
+                        <a class="nav-link" href="views/reportes.jsp" target="miContenedor"><i class="far fa-file-alt"></i> Reportes</a>
                     </li>
                 </ul>
                 <div class="btn-group">
-                    <button class="btn btn-danger center-block" type="submit" name="accion" value="Salir">Cerrar Sesion</button>
+                	<a class="btn btn-danger center-block" href="index.jsp"><i class="fas fa-power-off"></i> Cerrar Sesion</a>
                 </div>
             </div>
         </nav>

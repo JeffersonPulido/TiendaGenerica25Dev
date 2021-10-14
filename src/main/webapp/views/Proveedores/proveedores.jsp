@@ -43,7 +43,7 @@
     <!--CONTENT-->
             <div class="container">
             <h1>Proveedores</h1>
-            <a class="btn btn-success" href="ControladorProveedores?accion=add"><i class="fas fa-user-plus"></i> Agregar Proveedor Nuevo</a>
+            <a class="btn btn-success" href="ControladorProveedores?accion=add"><i class="fas fa-plus-circle"></i> Agregar Proveedor Nuevo</a>
             <hr>
             <br>
                             
@@ -74,8 +74,8 @@
                         <td><%= per.getNombre_proveedor()%></td>
                         <td><%= per.getTelefono_proveedor()%></td>
                         <td>
-                            <a class="btn btn-warning" href="ControladorProveedores?accion=editar&nitproveedor=<%= per.getNitproveedor()%>"><i class="fas fa-user-edit"></i></a>
-                            <a class="btn btn-danger" href="ControladorProveedores?accion=eliminar&nitproveedor=<%= per.getNitproveedor()%>"><i class="fas fa-user-times"></i></a>
+                            <a class="btn btn-warning" href="ControladorProveedores?accion=editar&nitproveedor=<%= per.getNitproveedor()%>"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" href="ControladorProveedores?accion=eliminar&nitproveedor=<%= per.getNitproveedor()%>"><i class="fas fa-minus-circle"></i></a>
                         </td>
                     </tr>
                     <%}%>

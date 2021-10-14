@@ -42,7 +42,7 @@
     <!--CONTENT-->
             <div class="container">
             <h1>Clientes</h1>
-            <a class="btn btn-success" href="ControladorClientes?accion=add"><i class="fas fa-user-plus"></i> Agregar Cliente Nuevo</a>
+            <a class="btn btn-success" href="ControladorClientes?accion=add"><i class="fas fa-plus-circle"></i> Agregar Cliente Nuevo</a>
             <hr>
             <br>
                             
@@ -73,8 +73,8 @@
                         <td><%= per.getNombre_cliente()%></td>
                         <td><%= per.getTelefono_cliente()%></td>
                         <td>
-                            <a class="btn btn-warning" href="ControladorClientes?accion=editar&cedula_cliente=<%= per.getCedula_cliente()%>"><i class="fas fa-user-edit"></i></a>
-                            <a class="btn btn-danger" href="ControladorClientes?accion=eliminar&cedula_cliente=<%= per.getCedula_cliente()%>"><i class="fas fa-user-times"></i></a>
+                            <a class="btn btn-warning" href="ControladorClientes?accion=editar&cedula_cliente=<%= per.getCedula_cliente()%>"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" href="ControladorClientes?accion=eliminar&cedula_cliente=<%= per.getCedula_cliente()%>"><i class="fas fa-minus-circle"></i></a>
                         </td>
                     </tr>
                     <%}%>
