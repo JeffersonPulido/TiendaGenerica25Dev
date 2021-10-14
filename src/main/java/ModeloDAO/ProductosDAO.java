@@ -8,6 +8,7 @@ import java.util.List;
 
 import Config.Conexion;
 import Interfaces.CRUDproductos;
+import Modelo.Clientes;
 import Modelo.Productos;
 import Modelo.Proveedores;
 
@@ -18,31 +19,32 @@ public class ProductosDAO implements CRUDproductos {
     PreparedStatement ps;
     ResultSet rs;
     Productos p=new Productos();
-    /*=============================VENTAS=====================================*/
     
-    public Productos listarId(int id) {
-    	Productos pr = new Productos();
-    	String sql = "select * from productos where codigo_producto="+id;
-    	try {
-			con = cn.conectar();
-			ps=con.prepareStatement(sql);
-			rs=ps.executeQuery();
-			while (rs.next()) {
-				pr.setCodigo_producto(rs.getInt(1));
-				pr.setNombre_producto(rs.getString(2));
-				pr.setNitproveedor(rs.getInt(3));
-				pr.setPrecio_compra(rs.getDouble(4));
-				pr.setIvacompra(rs.getDouble(5));
-				pr.setPrecio_venta(rs.getDouble(6));
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return pr;
-    	
-    	
+	
+    /*========================================VENTAS=============================================*/
+    
+    public Productos BuscarProductos(int codigo_producto){
+    	Productos productos = new Productos();
+        String consulta = "SELECT * FROM productos WHERE codigo_producto = ?";
+        con = cn.conectar();
+        try {
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, codigo_producto);
+            rs = ps.executeQuery();
+            while(rs.next()){
+            	productos.setCodigo_producto(rs.getInt("codigo_producto"));
+            	productos.setNombre_producto(rs.getString("nombre_producto"));
+            	productos.setNitproveedor(rs.getInt("nitproveedor"));
+            	productos.setPrecio_compra(rs.getDouble("precio_compra"));
+            	productos.setIvacompra(rs.getDouble("ivacompra"));
+            	productos.setPrecio_venta(rs.getDouble("precio_venta"));
+                //System.err.println(""+usuario.getNombre());
+              }
+        } catch (Exception e) {
+        }
+        return productos;
     }
-    
+        
     /*=============================CRUD=====================================*/
 	@Override//SELECT * FROM TOTAL
 	public List listar() {

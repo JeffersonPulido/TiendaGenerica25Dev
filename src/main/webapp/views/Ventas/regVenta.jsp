@@ -49,16 +49,19 @@
                         <form action="ControladorV?menu=Ventas" method="post">
                             <div class="row">
                                 <div class="col-md-12 d-flex form-group">
-                                    <input type="number" name="codigoproducto" class="form-control" placeholder="Codigo Producto">
+                                    <input type="number" name="codigoproducto" class="form-control" placeholder="Codigo Producto" value="${productoseleccionado.getCodigo_producto()}">
                                     <input type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-dark">
                                 </div>
                                 <div class="col-md-12 d-flex form-group">
-                                    <input type="text" name="nombreproducto" class="form-control" placeholder="Nombre Producto">
+                                    <input type="text" name="nombreproducto" class="form-control" placeholder="Nombre Producto" value="${productoseleccionado.getNombre_producto()}" disabled>
                                 </div>
-                                <div class="col-md-6 d-flex form-group">
-                                    <input type="text" name="precioproducto" class="form-control" placeholder="$ 0">
+                                <div class="col-md-4 d-flex form-group">
+                                    <input type="text" name="ivaproducto" class="form-control" placeholder="0 %" value="IVA ${productoseleccionado.getIvacompra()} %" disabled>
                                 </div>
-                                <div class="col-md-6 d-flex form-group">
+                                <div class="col-md-4 d-flex form-group">
+                                    <input type="text" name="precioproducto" class="form-control" placeholder="$ 0" value="$ ${productoseleccionado.getPrecio_venta()}" disabled>
+                                </div>
+                                <div class="col-md-4 d-flex form-group">
                                     <input type="number" value="1" name="cantidadproducto" class="form-control" placeholder="Cantidad">
                                 </div>
                             </div>
@@ -77,8 +80,8 @@
                        
                     </div>
                     <div class="card-body">
-                         <table class="table">
-                    <thead class="thead-light">
+                    <table class="table">
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Codigo</th>
@@ -99,8 +102,8 @@
                             <td style="width: 30px;">${lista.getCantidad()}</td>
                             <td>$ ${lista.getSubtotal()}</td>
                             <td class="columna">
-                                <a class="btn btn-danger">Eliminar</a>
-                                <a class="btn btn-warning">Editar</a>
+                                <a class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-warning"><i class="fas fa-pen"></i></a>
                             </td>
                         </tr>
                         </c:forEach>

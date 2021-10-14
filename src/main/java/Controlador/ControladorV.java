@@ -1,6 +1,10 @@
 package Controlador;
 
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Modelo.Clientes;
+import Modelo.DetalleVenta;
+import Modelo.Productos;
+import Modelo.Ventas;
 import ModeloDAO.ClientesDAO;
+import ModeloDAO.ProductosDAO;
 
 @WebServlet("/ControladorV")
 public class ControladorV extends HttpServlet {
@@ -20,7 +28,16 @@ public class ControladorV extends HttpServlet {
     
 	Clientes usuario = new Clientes();
 	ClientesDAO usuarioDAO = new ClientesDAO();
-
+	Productos producto = new Productos();
+	ProductosDAO productoDAO = new ProductosDAO();
+	Ventas venta = new Ventas();
+	int item, codProducto, precio, cantidad, ivaProducto;
+    String nomProducto;
+    double subtotal, totalapagar = 0;
+    List<Ventas> listaVentas = new ArrayList();
+    NumberFormat formatoNumero1;
+    String total1;
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		 String menu = request.getParameter("menu");
@@ -35,12 +52,13 @@ public class ControladorV extends HttpServlet {
 	                    usuario = usuarioDAO.BuscarCliente(documentoCliente);
 	                    request.setAttribute("cliente", usuario);
 	                    break;
-	                /*
 	                case "BuscarProducto":
 	                    int codigoProducto = Integer.parseInt(request.getParameter("codigoproducto"));
-	                    producto = productoDAO.ConsultaPorCodigo(codigoProducto);
+	                    producto = productoDAO.BuscarProductos(codigoProducto);
 	                    request.setAttribute("productoseleccionado", producto);
 	                    request.setAttribute("cliente", usuario);
+	                    break;
+	                	/*
 	                    for (int i = 0; i < listaVentas.size(); i++) {
 	                        totalapagar += listaVentas.get(i).getSubtotal();
 	                    }
@@ -52,30 +70,31 @@ public class ControladorV extends HttpServlet {
 
 	                case "AgregarProducto":
 	                    totalapagar = 0;
-	                    venta = new Venta();
+	                    venta = new Ventas();
+	                    DetalleVenta ventadet = new DetalleVenta();
 	                    item++;
 	                    codProducto = Integer.parseInt(request.getParameter("codigoproducto"));
-	                    descripcion = request.getParameter("nombreproducto");
+	                    nomProducto = request.getParameter("nombreproducto");
+	                    ivaProducto = Integer.parseInt(request.getParameter("ivaproducto"));
 	                    precio = Integer.parseInt(request.getParameter("precioproducto"));
 	                    cantidad = Integer.parseInt(request.getParameter("cantidadproducto"));
 	                    subtotal = precio * cantidad;
-	                    venta.setItem(item);
-	                    venta.setDescripcionProducto(descripcion);
-	                    venta.setCantidad(cantidad);
-	                    venta.setPrecio(precio);
-	                    venta.setSubtotal(subtotal);
-	                    venta.setIdProducto(codProducto);
+	                    venta.setCodigo_venta(item);
+	                    venta.setIvaventa(ivaProducto);
+	                    ventadet.setCantidad_producto(cantidad);
+	                    venta.setValor_venta(subtotal);
+	                    ventadet.setCodigo_producto(codProducto);
 	                    listaVentas.add(venta);
 	                    System.err.println("error venta");
 	                    request.setAttribute("listaventas", listaVentas);
 	                    for (int i = 0; i < listaVentas.size(); i++) {
-	                        totalapagar += listaVentas.get(i).getSubtotal();
+	                        totalapagar += listaVentas.get(i).getValor_venta();
 	                    }
 	                    formatoNumero1 = NumberFormat.getNumberInstance();
 	                    total1 = formatoNumero1.format(totalapagar);
 	                    request.setAttribute("totalapagar", total1);
 	                    break;
-	                    
+
 	                case "GenerarVenta":
 	                    venta.setIdCliente(usuario.getId());
 	                    venta.setIdEmpleado(1);
