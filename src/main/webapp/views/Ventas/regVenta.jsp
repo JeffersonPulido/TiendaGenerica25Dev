@@ -62,7 +62,7 @@
                                     <input type="text" name="precioproducto" class="form-control" placeholder="$ 0" value="$ ${productoseleccionado.getPrecio_venta()}" disabled>
                                 </div>
                                 <div class="col-md-4 d-flex form-group">
-                                    <input type="number" value="1" name="cantidadproducto" class="form-control" placeholder="Cantidad">
+                                    <input type="number" value="1" name="cantidadproducto" class="form-control" placeholder="Cantidad" min="1">
                                 </div>
                             </div>
                             <input type="submit" name="accion" value="AgregarProducto" class="btn btn-outline-primary col text-center">
