@@ -75,7 +75,7 @@
                     <div class="card-header">
                         <div class="form-group row">
                              <label class="col-sm-2 col-form-label">N° Factura</label>
-                        <input class="form-control col-md-4" type="text" name="txtnumerofactura">
+                        <input class="form-control col-md-4" type="text" name="txtnumerofactura" value="1" disabled>
                         </div>
                        
                     </div>
@@ -84,7 +84,6 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Codigo</th>
                             <th scope="col">Producto</th>
                             <th scope="col">Precio</th>
                             <th scope="col">Cantidad</th>
@@ -93,14 +92,36 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <!-- DATOS QUEMADOS -->
                        <c:forEach var="lista" items="${listaventas}">
                         <tr>
-                            <th scope="row" style="width: 30px;">${lista.getItem()}</th>
-                            <td style="width: 30px;">${lista.getIdProducto()}</td>
-                            <td style="width: 350px;">${lista.getDescripcionProducto()}</td>
-                            <td>$ ${lista.getPrecio()}</td>
-                            <td style="width: 30px;">${lista.getCantidad()}</td>
-                            <td>$ ${lista.getSubtotal()}</td>
+                            <th scope="row" style="width: 30px;">1</th>
+                            <td style="width: 30px;">Melocotones</td>
+                            <td>$ 30351</td>
+                            <td style="width: 30px;">1</td>
+                            <td>$ 30351</td>
+                            <td class="columna">
+                                <a class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-warning"><i class="fas fa-pen"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="width: 30px;">2</th>
+                            <td style="width: 30px;">Manzanas</td>
+                            <td>$ 21549</td>
+                            <td style="width: 30px;">2</td>
+                            <td>$ 43098</td>
+                            <td class="columna">
+                                <a class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-warning"><i class="fas fa-pen"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="width: 30px;">3</th>
+                            <td style="width: 30px;">Platanos</td>
+                            <td>$ 35320</td>
+                            <td style="width: 30px;">3</td>
+                            <td>$ 105960</td>
                             <td class="columna">
                                 <a class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                 <a class="btn btn-warning"><i class="fas fa-pen"></i></a>
@@ -116,7 +137,7 @@
                             <!-- <a class="btn btn-danger" href="Controlador?menu=Ventas&accion=NuevaVenta">Nueva Venta</a>  -->
                         </div>
                         <div class="col-md-4">
-                            <input type=text" name="txttotalapagar" class="form-control" placeholder="$ 0" disabled="disabled">
+                            <input type="text" name="txttotalapagar" class="form-control" placeholder="$ 0" disabled="disabled" value="$ 179409">
                          </div>
                     </div>
                     
