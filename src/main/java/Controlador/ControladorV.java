@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Modelo.Clientes;
-import Modelo.DetalleVenta;
 import Modelo.Productos;
 import Modelo.Ventas;
 import ModeloDAO.ClientesDAO;
@@ -33,7 +32,7 @@ public class ControladorV extends HttpServlet {
 	Ventas venta = new Ventas();
 	int item, codProducto, precio, cantidad, ivaProducto;
     String nomProducto;
-    double subtotal, totalapagar = 0;
+    double subtotal, totalapagar, precioconiva = 0;
     List<Ventas> listaVentas = new ArrayList();
     NumberFormat formatoNumero1;
     String total1;
@@ -67,23 +66,23 @@ public class ControladorV extends HttpServlet {
 	                    request.setAttribute("totalapagar", total1);
 	                    request.setAttribute("listaventas", listaVentas);
 	                    break;
-
+	                	 */
 	                case "AgregarProducto":
 	                    totalapagar = 0;
 	                    venta = new Ventas();
-	                    DetalleVenta ventadet = new DetalleVenta();
 	                    item++;
 	                    codProducto = Integer.parseInt(request.getParameter("codigoproducto"));
 	                    nomProducto = request.getParameter("nombreproducto");
 	                    ivaProducto = Integer.parseInt(request.getParameter("ivaproducto"));
 	                    precio = Integer.parseInt(request.getParameter("precioproducto"));
 	                    cantidad = Integer.parseInt(request.getParameter("cantidadproducto"));
-	                    subtotal = precio * cantidad;
+	                    precioconiva = precio * ivaProducto / 100;
+	                    subtotal = (precio + precioconiva) * cantidad;
 	                    venta.setCodigo_venta(item);
 	                    venta.setIvaventa(ivaProducto);
-	                    ventadet.setCantidad_producto(cantidad);
+	                    venta.setCantidad_producto(cantidad);
 	                    venta.setValor_venta(subtotal);
-	                    ventadet.setCodigo_producto(codProducto);
+	                    venta.setCodigo_producto(codProducto);
 	                    listaVentas.add(venta);
 	                    System.err.println("error venta");
 	                    request.setAttribute("listaventas", listaVentas);
@@ -94,7 +93,7 @@ public class ControladorV extends HttpServlet {
 	                    total1 = formatoNumero1.format(totalapagar);
 	                    request.setAttribute("totalapagar", total1);
 	                    break;
-
+/*
 	                case "GenerarVenta":
 	                    venta.setIdCliente(usuario.getId());
 	                    venta.setIdEmpleado(1);
