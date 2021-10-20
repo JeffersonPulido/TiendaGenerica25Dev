@@ -9,7 +9,7 @@ public class Ventas {
 	String numeroComprobante;
 	int cedula_usuario;
 	int cedula_cliente;
-	
+	String nombreproducto;
 	double valor_total;
 	double valor_venta;
 	double valoriva;
@@ -18,8 +18,8 @@ public class Ventas {
 	double total_venta;
 	
 	public Ventas(int codigo_venta, int item, int codigo_detalle_venta, int codigo_producto, int cantidad_producto,
-			String numeroComprobante, int cedula_usuario, int cedula_cliente, double valor_total, double valor_venta,
-			double valoriva, double ivaventa, double total_venta) {
+			String numeroComprobante, int cedula_usuario, int cedula_cliente, String nombreproducto, double valor_total,
+			double valor_venta, double valoriva, double ivaventa, double total_venta) {
 		super();
 		this.codigo_venta = codigo_venta;
 		this.item = item;
@@ -29,6 +29,7 @@ public class Ventas {
 		this.numeroComprobante = numeroComprobante;
 		this.cedula_usuario = cedula_usuario;
 		this.cedula_cliente = cedula_cliente;
+		this.nombreproducto = nombreproducto;
 		this.valor_total = valor_total;
 		this.valor_venta = valor_venta;
 		this.valoriva = valoriva;
@@ -104,6 +105,14 @@ public class Ventas {
 		this.cedula_cliente = cedula_cliente;
 	}
 
+	public String getNombreproducto() {
+		return nombreproducto;
+	}
+
+	public void setNombreproducto(String nombreproducto) {
+		this.nombreproducto = nombreproducto;
+	}
+
 	public double getValor_total() {
 		return valor_total;
 	}
@@ -143,8 +152,6 @@ public class Ventas {
 	public void setTotal_venta(double total_venta) {
 		this.total_venta = total_venta;
 	}
-
-	
 	
 	
 	

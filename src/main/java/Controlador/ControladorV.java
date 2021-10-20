@@ -16,6 +16,7 @@ import Modelo.Productos;
 import Modelo.Ventas;
 import ModeloDAO.ClientesDAO;
 import ModeloDAO.ProductosDAO;
+import ModeloDAO.VentaDAO;
 
 @WebServlet("/ControladorV")
 public class ControladorV extends HttpServlet {
@@ -30,10 +31,12 @@ public class ControladorV extends HttpServlet {
 	Productos producto = new Productos();
 	ProductosDAO productoDAO = new ProductosDAO();
 	Ventas venta = new Ventas();
-	int item, codProducto, precio, cantidad, ivaProducto;
-    String nomProducto;
-    double subtotal, totalapagar, precioconiva = 0;
+	int item, codProducto, precio, cantidad;
+    String descripcion;
+    double subtotal, totalapagar = 0;
     List<Ventas> listaVentas = new ArrayList();
+    VentaDAO ventaDAO = new VentaDAO();
+    int numfac = 0;
     NumberFormat formatoNumero1;
     String total1;
     
@@ -67,27 +70,27 @@ public class ControladorV extends HttpServlet {
 	                    request.setAttribute("listaventas", listaVentas);
 	                    break;
 	                	 */
+
 	                case "AgregarProducto":
 	                    totalapagar = 0;
 	                    venta = new Ventas();
 	                    item++;
 	                    codProducto = Integer.parseInt(request.getParameter("codigoproducto"));
-	                    nomProducto = request.getParameter("nombreproducto");
-	                    ivaProducto = Integer.parseInt(request.getParameter("ivaproducto"));
+	                    descripcion = request.getParameter("nombreproducto");
 	                    precio = Integer.parseInt(request.getParameter("precioproducto"));
 	                    cantidad = Integer.parseInt(request.getParameter("cantidadproducto"));
-	                    precioconiva = precio * ivaProducto / 100;
-	                    subtotal = (precio + precioconiva) * cantidad;
+	                    subtotal = precio * cantidad;
 	                    venta.setCodigo_venta(item);
-	                    venta.setIvaventa(ivaProducto);
+	                    venta.setNombreproducto(descripcion);
 	                    venta.setCantidad_producto(cantidad);
-	                    venta.setValor_venta(subtotal);
+	                    venta.setValor_venta(precio);
+	                    venta.setValor_total(subtotal);
 	                    venta.setCodigo_producto(codProducto);
 	                    listaVentas.add(venta);
 	                    System.err.println("error venta");
 	                    request.setAttribute("listaventas", listaVentas);
 	                    for (int i = 0; i < listaVentas.size(); i++) {
-	                        totalapagar += listaVentas.get(i).getValor_venta();
+	                        totalapagar += listaVentas.get(i).getValor_total();
 	                    }
 	                    formatoNumero1 = NumberFormat.getNumberInstance();
 	                    total1 = formatoNumero1.format(totalapagar);

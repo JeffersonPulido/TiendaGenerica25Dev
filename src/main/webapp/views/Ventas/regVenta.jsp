@@ -94,8 +94,7 @@
 				<div class="card-header">
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">N° Factura</label> <input
-							class="form-control col-md-4" type="text" name="txtnumerofactura"
-							value="1" disabled>
+							class="form-control col-md-4" type="text" name="txtnumerofactura" value="1" disabled>
 					</div>
 
 				</div>
@@ -115,10 +114,10 @@
 							<c:forEach var="lista" items="${listaventas}">
 								<tr>
 									<th scope="row" style="width: 30px;">${lista.getCodigo_venta()}</th>
-									<td style="width: 30px;">${lista.getCodigo_producto()}</td>
-									<td>$ ${lista.getPrecio()}</td>
-									<td style="width: 30px;">${lista.getCantidad_producto()}</td>
+									<td style="width: 30px;">${lista.getNombreproducto()}</td>
 									<td>$ ${lista.getValor_venta()}</td>
+									<td style="width: 30px;">${lista.getCantidad_producto()}</td>
+									<td>$ ${lista.getValor_total()}</td>
 									<td class="columna">
 										<a class="btn btn-danger">Eliminar</a>
 										<a class="btn btn-warning">Editar</a>
