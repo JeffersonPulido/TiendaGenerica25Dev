@@ -29,14 +29,14 @@ public class VentaDAO{
 	public boolean crearVenta(VentaDTO vDTO, DetalleVentaDTO dvDTO1, DetalleVentaDTO dvDTO2, DetalleVentaDTO dvDTO3) {
 		boolean bool = false;
 		try {
-			/*String insertar = "INSERT INTO ventas (cedula_usuario, cedula_cliente, valor_venta, ivaventa, total_venta) VALUES (?,?,?,?,?)";*/
-			String insertar = "INSERT INTO ventas (cedula_cliente, valor_venta, ivaventa, total_venta) VALUES (?,?,?,?)";
+			String insertar = "INSERT INTO ventas (cedula_usuario, cedula_cliente, valor_venta, ivaventa, total_venta) VALUES (?,?,?,?,?)";
+			/*String insertar = "INSERT INTO ventas (cedula_cliente, valor_venta, ivaventa, total_venta) VALUES (?,?,?,?)";*/
 			ps = conec.prepareStatement(insertar);
-			/*ps.setString(1, vDTO.getcUsuario());*/
-			ps.setString(1, vDTO.getcCliente());
-			ps.setInt(2, vDTO.getValorVenta());
-			ps.setInt(3, vDTO.getIvaVenta());
-			ps.setInt(4, vDTO.getTotalVenta());
+			ps.setString(1, vDTO.getcUsuario());
+			ps.setString(2, vDTO.getcCliente());
+			ps.setInt(3, vDTO.getValorVenta());
+			ps.setInt(4, vDTO.getIvaVenta());
+			ps.setInt(5, vDTO.getTotalVenta());
 			bool = ps.executeUpdate()>0;
 			if(bool) {
 				int codigo = consultarCodigoVenta();
@@ -82,38 +82,35 @@ public class VentaDAO{
 		}
 		return codigo;
 	}
-	
 	// reporte
-	public ArrayList<ReporteVentaDTO> listarVentaCliente() {
-		
-		ReporteVentaDTO report = null;
-		ArrayList<ReporteVentaDTO> listar = new ArrayList<>();
-		
-		String sql = "SELECT cli.cedula_cliente, cli.nombre_cliente, SUM(ven.total_venta) "
-						+ "FROM ventas as ven "
-						+ "INNER JOIN clientes as cli "
-						+ "ON cli.cedula_cliente = ven.cedula_cliente "
-						+ "GROUP BY ven.cedula_cliente";
-		try {
-			
-			ps = conec.prepareStatement(sql);
-			res = ps.executeQuery();
-			
-			while(res.next()) {
-				report = new ReporteVentaDTO(res.getInt(1), res.getString(2), res.getInt(3));
-				listar.add(report);
-			}
-			
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		
-		return listar;
-	}
+		public ArrayList<ReporteVentaDTO> listarVentaCliente() {
 
-}
-			
-			
+			ReporteVentaDTO report = null;
+			ArrayList<ReporteVentaDTO> listar = new ArrayList<>();
+
+			String sql = "SELECT cli.cedula_cliente, cli.nombre_cliente, SUM(ven.total_venta) "
+							+ "FROM ventas as ven "
+							+ "INNER JOIN clientes as cli "
+							+ "ON cli.cedula_cliente = ven.cedula_cliente "
+							+ "GROUP BY ven.cedula_cliente";
+			try {
+
+				ps = conec.prepareStatement(sql);
+				res = ps.executeQuery();
+
+				while(res.next()) {
+					report = new ReporteVentaDTO(res.getInt(1), res.getString(2), res.getInt(3));
+					listar.add(report);
+				}
+
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+
+			return listar;
+		}
+
+	}
 			
 			
 			

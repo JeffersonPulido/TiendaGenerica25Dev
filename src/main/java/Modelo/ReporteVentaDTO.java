@@ -1,11 +1,10 @@
 package Modelo;
-
 public class ReporteVentaDTO {
 
 	private int cedulaCliente;
 	private String nombreCliente;
 	private int totalCliente;
-	
+
 	public ReporteVentaDTO(int cedulaCliente, String nombreCliente, int totalCliente) {
 		super();
 		this.cedulaCliente = cedulaCliente;
@@ -36,5 +35,5 @@ public class ReporteVentaDTO {
 	public void setTotalCliente(int totalCliente) {
 		this.totalCliente = totalCliente;
 	}
-	
+
 }

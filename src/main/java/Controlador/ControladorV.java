@@ -112,7 +112,7 @@ public class ControladorV extends HttpServlet {
 			int cant1 = 0, cant2 = 0, cant3 = 0, precio1 = 0, precio2 = 0, precio3 = 0, ivaV1 = 0, ivaV2 = 0, ivaV3 = 0,
 					totalIva = 0, valorT1 = 0, valorT2 = 0, valorT3 = 0, totalV1 = 0, totalV2 = 0, totalV3 = 0,
 					totalVenta, totalPagar = 0, codigoPd1 = 0, codigoPd2 = 0, codigoPd3 = 0, codigoV = 0;
-			String cCliente, cUsuario = "";
+			String cCliente, cUsuario = "123456789";
 			// crear venta 1
 			codigoPd1 = Integer.parseInt(request.getParameter("codigo1"));
 			cant1 = Integer.parseInt(request.getParameter("cant1"));
