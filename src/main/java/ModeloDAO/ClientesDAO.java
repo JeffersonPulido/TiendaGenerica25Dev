@@ -3,8 +3,11 @@ package ModeloDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import Config.Conexion;
 import Interfaces.CRUDclientes;
@@ -20,27 +23,23 @@ public class ClientesDAO implements CRUDclientes {
 	
     /*========================================VENTAS=============================================*/
     
-    public Clientes BuscarCliente(int cedula_cliente){
-    	Clientes usuario = new Clientes();
-        String consulta = "SELECT * FROM clientes WHERE cedula_cliente = ?";
-        con = cn.conectar();
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setInt(1, cedula_cliente);
-            rs = ps.executeQuery();
-            while(rs.next()){
-                usuario.setCedula_cliente(rs.getInt("cedula_cliente"));
-                usuario.setDireccion_cliente(rs.getString("direccion_cliente"));
-                usuario.setEmail_cliente(rs.getString("email_cliente"));
-                usuario.setNombre_cliente(rs.getString("nombre_cliente"));
-                usuario.setTelefono_cliente(rs.getString("telefono_cliente"));
-                //System.err.println(""+usuario.getNombre());
-              }
-        } catch (Exception e) {
-        }
-        return usuario;
-    }
-    
+	public Clientes buscar_cliente(int cedula) {
+		Clientes cliente = null;
+		try {
+			String sql = "SELECT * FROM clientes WHERE cedula_cliente = ?";
+            con=cn.conectar();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, cedula);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				cliente = new Clientes(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+			}
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, "Error al consultar "+e);
+		}
+		return cliente;
+	}
+	
 	/*========================================CRUD=============================================*/
 	@Override //SELECT * FROM TOTAL
 	public List listar() {

@@ -3,13 +3,17 @@ package ModeloDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import Config.Conexion;
 import Interfaces.CRUDproductos;
 import Modelo.Clientes;
 import Modelo.Productos;
+import Modelo.ProductosDTO;
 import Modelo.Proveedores;
 
 public class ProductosDAO implements CRUDproductos {
@@ -23,27 +27,23 @@ public class ProductosDAO implements CRUDproductos {
 	
     /*========================================VENTAS=============================================*/
     
-    public Productos BuscarProductos(int codigo_producto){
-    	Productos productos = new Productos();
-        String consulta = "SELECT * FROM productos WHERE codigo_producto = ?";
-        con = cn.conectar();
-        try {
-            ps = con.prepareStatement(consulta);
-            ps.setInt(1, codigo_producto);
-            rs = ps.executeQuery();
-            while(rs.next()){
-            	productos.setCodigo_producto(rs.getInt("codigo_producto"));
-            	productos.setNombre_producto(rs.getString("nombre_producto"));
-            	productos.setNitproveedor(rs.getInt("nitproveedor"));
-            	productos.setPrecio_compra(rs.getDouble("precio_compra"));
-            	productos.setIvacompra(rs.getDouble("ivacompra"));
-            	productos.setPrecio_venta(rs.getDouble("precio_venta"));
-                //System.err.println(""+usuario.getNombre());
-              }
-        } catch (Exception e) {
-        }
-        return productos;
-    }
+	public ProductosDTO consultarProductoV(String codigo) {
+		ProductosDTO pdDTO = null;
+		try {
+			String consultar = "SELECT codigo_producto, nombre_producto, precio_venta, ivacompra FROM productos WHERE codigo_producto=?";
+            con=cn.conectar();
+			ps = con.prepareStatement(consultar);
+			ps.setString(1, codigo);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				pdDTO = new ProductosDTO(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
+			}
+		} catch (SQLException sqle) {
+			JOptionPane.showMessageDialog(null, "Error al consultar el producto en DAO. ");
+		}
+		return pdDTO;
+	}
+
         
     /*=============================CRUD=====================================*/
 	@Override//SELECT * FROM TOTAL

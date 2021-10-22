@@ -1,5 +1,6 @@
 package Modelo;
 
+
 public class Productos {
 	int codigo_producto;
 	String nombre_producto;

@@ -41,7 +41,8 @@
                         <a class="nav-link" href="ControladorProductos?accion=listar" target="miContenedor"><i class="fas fa-carrot"></i> Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ControladorV?menu=Principal" target="miContenedor"><i class="fas fa-money-bill-alt"></i> Ventas</a>
+                        <!-- <a class="nav-link" href="ControladorV?menu=Principal" target="miContenedor"><i class="fas fa-money-bill-alt"></i> Ventas</a>  -->
+                        <a class="nav-link" href="views/Ventas/regVenta.jsp" target="miContenedor"><i class="fas fa-money-bill-alt"></i> Ventas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="views/reportes.jsp" target="miContenedor"><i class="far fa-file-alt"></i> Reportes</a>
