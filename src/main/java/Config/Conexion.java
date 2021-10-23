@@ -2,6 +2,8 @@ package Config;
 
 import java.sql.*;
 
+import javax.swing.JOptionPane;
+
 public class Conexion {
 	
 	private String bd = "grupo25_equipo6";
